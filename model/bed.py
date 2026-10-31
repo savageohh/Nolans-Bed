@@ -41,7 +41,7 @@ LADDER_CLEAR = 14.0           # clear width between ladder stiles
 LADDER_ANGLE = 70.0           # degrees from floor
 N_TREADS = 5                  # plus the rail top as the last step
 RIBS_PER_PANEL = 5 if ARGS.full else 4   # wider span -> closer ribs
-SPINDLE_GAP = 3.0             # target clear gap (max allowed 3.5)
+SPINDLE_GAP = 3.0             # guard slat clear gap target (max allowed 3.5)
 KERF = 0.125
 
 # ------------------------------------------------------------------ pricing
@@ -50,7 +50,9 @@ KERF = 0.125
 PRICES = {
     # lumber, 8 ft, kiln-dried S4S (SPF / Doug-fir / SYP), #2 & better
     "2x2": (2.50, 4.00), "2x4": (3.50, 5.00), "2x6": (5.50, 8.00), "2x8": (8.00, 11.00),
-    "2x10": (11.00, 15.00), "1x4": (4.00, 9.00),
+    "2x10": (11.00, 15.00),
+    # pine boards, 8 ft, #2 common (select/clear runs ~2x)
+    "1x3": (4.00, 7.00), "1x4": (5.00, 9.00), "1x6": (8.00, 14.00),
     # plywood, 4x8 sheet
     "ply34": (55.00, 75.00),     # 3/4in sanded pine/birch (Baltic birch ~$70)
     "ply12": (40.00, 55.00),     # 1/2in BC sanded
@@ -89,11 +91,12 @@ PLY_BOT = DECK_TOP - 0.75
 RIB_BOT = PLY_BOT - W2["2x4"]
 MAT_TOP = DECK_TOP + MATTRESS_T
 CAP_TOP = MAT_TOP + CAP_ABOVE_MATTRESS
-CAP_BOT = CAP_TOP - T
+PINE = 0.75                   # 1x pine board thickness
+SLAT_W = 2.5                  # 1x3
+CAP_BOT = CAP_TOP - PINE
 GF = (YF0 - T, YF0)                       # front guard plane (on rail's outer face)
 GB = (YB1, YB1 + T)                       # back guard plane
 STILE_BOT = RAIL_BOT + 0.25
-GBR = (RAIL_TOP - 1.0, RAIL_TOP - 1.0 + W2["2x4"])   # guard bottom rail z
 # end-frame bands (z) on the posts' inner faces -- must not overlap the
 # long-member bands (rail housing, back stretcher)
 EF = {
@@ -180,40 +183,44 @@ for i in range(2):
              housed=["Long rail"], note="ends drop into open-top stopped dados in rails")
 
 # ---------------------------------------------------------------- guards
-def guard(side, plane, x0, x1, stile_xs, post_ends):
+def guard(side, plane, x0, x1, stile_xs, flush_end=False):
+    """2x4 stiles carry the bolts; the rest is 3/4in pine face-glued to their inner face:
+    1x4 top and bottom rails, 1x3 slats lapped over the rails, 1x6 cap on top."""
     mod = f"Guard ({side})"
     g0, g1 = plane
-    yc = (g0 + g1) / 2
+    s = 1 if g0 < WO / 2 else -1                 # +1 = inward is +y (front guard)
+    yi = g1 if s > 0 else g0                     # stile inner face
+    band = lambda a, b: (min(yi + s * a, yi + s * b), max(yi + s * a, yi + s * b))
+    yr, ys = band(0, PINE), band(PINE, 2 * PINE)  # rail plane, slat plane
     for k, sx in enumerate(stile_xs):
         part(f"Guard stile {side} {k + 1}", mod, "2x4", (sx, sx + 3.5, g0, g1, STILE_BOT, CAP_BOT),
-             extra=0.5, housed=["Guard bottom rail"], note="half-lapped to bottom rail; stub tenon into cap groove")
-    part(f"Guard bottom rail ({side})", mod, "2x4", (x0, x1, g0, g1, GBR[0], GBR[1]),
-         housed=["Guard stile"], note="1/2in groove in top edge for spindles")
-    part(f"Guard cap ({side})", mod, "2x4", (x0, x1, yc - 1.75, yc + 1.75, CAP_BOT, CAP_TOP),
-         note="laid flat; 1/2in groove underside; 1/2in roundover")
-    # spindles in each bay
-    edges = sorted(stile_xs)
-    for a, b in zip(edges[:-1], edges[1:]):
-        lo, hi = a + 3.5, b
-        L = hi - lo
-        n = math.ceil((L - SPINDLE_GAP) / (1.5 + SPINDLE_GAP))
-        gap = (L - n * 1.5) / (n + 1)
-        assert gap <= 3.5, gap
-        for j in range(n):
-            xs = lo + gap + j * (1.5 + gap)
-            part(f"Spindle {side}", mod, "2x2", (xs, xs + 1.5, yc - 0.75, yc + 0.75, GBR[1], CAP_BOT),
-                 extra=1.0, note=f"1/2in stub tenons both ends; clear gap {gap:.2f}in")
-    return post_ends
+             note="bolted to post/rail; pine rails glued+screwed to its inner face")
+    part(f"Guard bottom rail ({side})", mod, "1x4", (x0, x1, *yr, RAIL_TOP, RAIL_TOP + 3.5),
+         note="pine; rests on the long rail's top edge")
+    part(f"Guard top rail ({side})", mod, "1x4", (x0, x1, *yr, CAP_BOT - 3.5, CAP_BOT), note="pine")
+    yc = (min(g0, ys[0]) + max(g1, ys[1])) / 2
+    part(f"Guard cap ({side})", mod, "1x6", (x0, x1, yc - 2.75, yc + 2.75, CAP_BOT, CAP_TOP),
+         note="pine, flat; glued+screwed to stiles and top rail; 1/2in roundover")
+    # slats: equal clear gaps; front guard's last slat finishes flush with the ladder opening
+    L, w = x1 - x0, SLAT_W
+    n = math.ceil((L - SPINDLE_GAP) / (w + SPINDLE_GAP)) if not flush_end else math.ceil(L / (w + SPINDLE_GAP))
+    gap = (L - n * w) / (n + 1) if not flush_end else (L - n * w) / n
+    assert gap <= 3.5, gap
+    for j in range(n):
+        xs = x0 + gap + j * (w + gap)
+        part(f"Guard slat {side}", mod, "1x3", (xs, xs + w, *ys, RAIL_TOP, CAP_BOT),
+             note=f"pine; glued+screwed over both rails; clear gap {gap:.2f}in")
+    return gap
 
 # centre stile sits 6in off centre so its rail inserts miss the two rib dados at the deck-panel seam
 mid = LO / 2 + 6.0
 assert all(abs(mid - (rx + T / 2)) > 1.75 + T / 2 + 0.75 for rx in rib_x), "centre stile over a rib dado"
-guard("back", GB, PX, LO - PX, [PX, mid - 1.75, LO - PX - 3.5], 2)
+guard("back", GB, PX, LO - PX, [PX, mid - 1.75, LO - PX - 3.5])
 ins("3/8-16", "post inner x-faces (back guard stiles)", 4)
 ins("3/8-16", "back rail outer face (back guard stiles)", 6)
 bolt('3/8-16 x 4-1/4"', 4)
 bolt('3/8-16 x 2-1/4"', 6)
-guard("front", GF, PX, OPEN0, [PX, OPEN0 - 3.5], 1)
+guard("front", GF, PX, OPEN0, [PX, OPEN0 - 3.5], flush_end=True)
 ins("3/8-16", "post inner x-face (front guard stile)", 2)
 ins("3/8-16", "front rail outer face (front guard stiles)", 4)
 bolt('3/8-16 x 4-1/4"', 2)
@@ -276,7 +283,7 @@ def dims(p):
 STOCK = {
     "post": ("2x4 (laminate pairs)", 1.5, 3.5),
     "2x2": ("2x2", 1.5, 1.5), "2x4": ("2x4", 1.5, 3.5), "2x6": ("2x6", 1.5, 5.5),
-    "2x8": ("2x8", 1.5, 7.25), "2x10": ("2x10", 1.5, 9.25), "1x4": ("1x4 (rip to width)", 0.75, 3.5),
+    "2x8": ("2x8", 1.5, 7.25), "2x10": ("2x10", 1.5, 9.25), "1x3": ("1x3 pine", 0.75, 2.5), "1x4": ("1x4 pine", 0.75, 3.5), "1x6": ("1x6 pine", 0.75, 5.5),
     "ply12": ("1/2in plywood", 0.5, None), "ply34": ("3/4in plywood", 0.75, None),
 }
 DENS = {"ply12": 0.020, "ply34": 0.020}     # lb/in^3 (plywood ~34 pcf)
@@ -366,8 +373,9 @@ chk("Post compression (everything on one post)", Pc / (PX * PY), Fc * Cp, "psi",
 # 5. guard cap: 200 lb outward at middle of the longest bay
 bay = max(OPEN0 - 3.5 - (PX + 3.5), (mid - 1.75) - (PX + 3.5))
 Mc = 200 * bay / 4
-chk("Guard cap bending (200 lb outward, longest bay)", Mc / S(1.5, 3.5), FB * CF["2x4"], "psi",
-    f"flat 2x4 bending about its 3.5in depth, bay {bay:.1f}in, spindles/bottom rail ignored")
+FB_PINE = 575.0                             # Eastern white pine #2 (NDS) -- weakest pine sold as boards
+chk("Guard cap bending (200 lb outward, longest bay)", Mc / S(PINE, 5.5), FB_PINE * 1.3, "psi",
+    f"flat 1x6 pine bending about its 5.5in width, bay {bay:.1f}in, top rail/slats ignored")
 # free guard stile at ladder opening (front stile 2): 100 lb at cap, couple from 2 bolts
 lever = CAP_TOP - (RAIL_TOP - 1.25)
 bolt_arm = (RAIL_TOP - 1.25) - (STILE_BOT + 1.0)   # stile-to-rail bolt spacing

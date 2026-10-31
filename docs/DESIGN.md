@@ -140,13 +140,22 @@ Same as J1, with a 2x6 in a housing at z 10–15.5.
   1-1/2" holes on a 6" grid. Mattresses on solid ply grow mildew.
 
 ### J4: Guard panel → post and rail
-- Guard frame (glued): **stiles** (2x4) half-lapped to a **bottom rail** (2x4 on edge),
-  **2x2 spindles** between the bottom rail and a **flat 2x4 cap**.
-- Spindle joinery is all router-table work. Rout a **1/2" × 1/2" groove** along the bottom
-  rail's top edge and the cap's underside, cut **1/2" stub tenons** on both ends of each
-  spindle, and glue **1/2" fillets** into the groove between spindles to set the spacing. One
-  bit setup does every spindle. The stiles' tops get the same stub tenon into the cap groove.
-- **Clear gap between spindles: 2.77–2.90"** (the 3-1/2" maximum is the hard rule).
+- **The 2x4 stiles carry all the bolts. Everything else in the guard is 3/4" pine boards**, since
+  none of it carries the bed's weight:
+  - **1x4 bottom and top rails**, glued and screwed flat against the stiles' inner (mattress-side)
+    face. The bottom rail rests on the long rail's top edge.
+  - **1x3 slats**, glued and screwed over both rails on the mattress side. Their inner faces land
+    flush with the inside of the mattress pocket.
+  - A **1x6 cap** laid flat across the tops of the stiles, rails and slats. It makes a wide,
+    comfortable armrest; give it a 1/2" roundover.
+- All the pine joints are long grain to long grain (glue plus 1-1/4" screws), so no joinery cuts
+  are needed. A slat **spacer block** cut to the gap width sets the spacing. Ease every slat edge
+  with a 1/4" roundover before assembly.
+- **Clear gap between slats: 2.72–2.80"** (the 3-1/2" maximum is the hard rule).
+- Pine is softer than the SPF framing, so the cap check uses #2 Eastern white pine (the weakest
+  pine sold as boards). The flat 1x6 cap is at 91% on the front guard's 51" span between stiles,
+  under a 200 lb outward push. If you'd like more margin, add a third front stile to the
+  `guard("front", ...)` call in `model/bed.py`, keeping its rail inserts clear of the rib dados.
 - The panel hangs on the **outer face** of the long rail. Each stile overlaps the rail by about
   9" and takes **two 3/8-16 bolts** (2-1/4") into rail inserts. Stiles next to a post also take
   **two 3/8-16 bolts horizontally through the stile's 3-1/2" width** into inserts in the
@@ -182,8 +191,7 @@ Same as J1, with a 2x6 in a housing at z 10–15.5.
 | Tenons | End rails (8) | Router table with a miter gauge and fence stop, or handheld with a straightedge. 1/2" thick |
 | Panel grooves | End rails + posts | Slot cutter or 1/4" straight bit in 2 passes, sized to your ply |
 | Rib dados | Long rails (16) | **Dado template**: a ply strip with a slot matched to your guide bushing and bit, held by a fence against the rail's top edge. Stop block at 3" from the bottom |
-| Spindle grooves & tenons | Guard caps, bottom rails, spindles | Router table, 1/2" straight bit, one setup |
-| Half-laps | Guard stiles × bottom rails | Router table or a lap jig, 3/4" deep |
+| Slat & cap edges | Guard slats, caps | 1/4" roundover on slats, 1/2" on the cap (router table) |
 | Angled tread dados | Ladder stiles (10) | 20° template + guide bushing. Make the two stiles as a **mirrored pair** |
 | Header notches, hook-lip rabbet | Ladder | Straight bit + fence |
 | Roundovers | Every exposed edge | 1/2" roundover on posts, caps and ladder; 1/4" everywhere else |
@@ -231,10 +239,11 @@ side and mark all the housings at once, so the bands match exactly.
 | Anti-tip furniture strap | 1 | Post → wall stud |
 | Wood glue, 1-1/4" & 2-1/2" screws, finish | | |
 
-Full board and sheet counts are in [CUTLIST.md](CUTLIST.md): about 17 2x4s, 6 2x6s, 1 2x8,
-2 2x10s, 4 2x2s, 1 1x4 (all 8 ft), plus one sheet each of 3/4" and 1/2" ply.
+Full board and sheet counts are in [CUTLIST.md](CUTLIST.md): about 13 2x4s, 6 2x6s, 1 2x8,
+2 2x10s and 1 2x2 for framing, plus 4 1x3s, 4 1x4s and 2 1x6s in pine for the guards (all 8 ft),
+and one sheet each of 3/4" and 1/2" ply.
 
-**Cost:** about **$410–650 in materials before tax** for the twin (about $440–710 with Minnesota tax),
+**Cost:** about **$450–720 in materials before tax** for the twin (about $480–780 with Minnesota tax),
 plus $130–250 if you need to buy router bits and jig stock. The itemized list is in [COST.md](COST.md).
 
 ## 8. Build order
@@ -285,7 +294,7 @@ covered the same way. The points this design is built around:
 - [x] Guard top **≥ 5" above the mattress top**: 6-1/2" with the 8" max mattress. **Label the max
       mattress thickness on the bed.**
 - [x] Every opening in the guards and end frames above the mattress is **≤ 3-1/2"**, including
-      the spindles (2.77–2.90") and the gap between rail and guard bottom (none).
+      the guard slats (2.72–2.80") and the gap between rail and guard bottom (none).
 - [x] Mattress fits the pocket snugly (≤ 1-1/4" total side play for a standard twin).
 - [x] All edges rounded, no protruding bolt ends. Check bolt lengths so nothing sticks out past
       an insert.

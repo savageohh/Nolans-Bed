@@ -2,14 +2,18 @@
 
 | Section | Item | Qty | Each | Line total |
 |---|---|---:|---:|---:|
-| Lumber | 1x4 x 8 ft | 1 | $4.00–9.00 | $4–$9 |
-| Lumber | 1x4 x 8 ft — spares (~15%) | 1 | $4.00–9.00 | $4–$9 |
+| Lumber | 1x3 x 8 ft | 4 | $4.00–7.00 | $16–$28 |
+| Lumber | 1x3 x 8 ft — spares (~15%) | 1 | $4.00–7.00 | $4–$7 |
+| Lumber | 1x4 x 8 ft | 4 | $5.00–9.00 | $20–$36 |
+| Lumber | 1x4 x 8 ft — spares (~15%) | 1 | $5.00–9.00 | $5–$9 |
+| Lumber | 1x6 x 8 ft | 2 | $8.00–14.00 | $16–$28 |
+| Lumber | 1x6 x 8 ft — spares (~15%) | 1 | $8.00–14.00 | $8–$14 |
 | Lumber | 2x10 x 8 ft | 2 | $11.00–15.00 | $22–$30 |
 | Lumber | 2x10 x 8 ft — spares (~15%) | 1 | $11.00–15.00 | $11–$15 |
-| Lumber | 2x2 x 8 ft | 4 | $2.50–4.00 | $10–$16 |
+| Lumber | 2x2 x 8 ft | 1 | $2.50–4.00 | $2–$4 |
 | Lumber | 2x2 x 8 ft — spares (~15%) | 1 | $2.50–4.00 | $2–$4 |
-| Lumber | 2x4 x 8 ft | 24 | $3.50–5.00 | $84–$120 |
-| Lumber | 2x4 x 8 ft — spares (~15%) | 4 | $3.50–5.00 | $14–$20 |
+| Lumber | 2x4 x 8 ft | 20 | $3.50–5.00 | $70–$100 |
+| Lumber | 2x4 x 8 ft — spares (~15%) | 3 | $3.50–5.00 | $10–$15 |
 | Lumber | 2x6 x 8 ft | 7 | $5.50–8.00 | $38–$56 |
 | Lumber | 2x6 x 8 ft — spares (~15%) | 2 | $5.50–8.00 | $11–$16 |
 | Lumber | 2x8 x 8 ft | 2 | $8.00–11.00 | $16–$22 |
@@ -34,14 +38,14 @@
 
 | Subtotal | Low | High |
 |---|---:|---:|
-| Lumber | $225 | $328 |
+| Lumber | $261 | $395 |
 | Plywood | $95 | $130 |
 | Inserts & bolts | $58 | $116 |
 | Other hardware | $16 | $30 |
 | Consumables | $65 | $115 |
-| **Materials before tax** | **$459** | **$719** |
-| Total with MN state only tax (6.875%) | $490 | $768 |
-| Total with Minneapolis (combined) tax (9.025%) | $500 | $784 |
+| **Materials before tax** | **$495** | **$786** |
+| Total with MN state only tax (6.875%) | $529 | $840 |
+| Total with Minneapolis (combined) tax (9.025%) | $539 | $857 |
 
 Optional tools & jig stock if you don't own them: **$130–$250** (1/2in upcut spiral bit, 3/4in top-bearing pattern bit, 1/2in roundover bit, 1/4in roundover bit, slot cutter (panel grooves), guide bushing set, insert drive bits, jig stock (1x4s, ply scrap, clamps excluded)).
 

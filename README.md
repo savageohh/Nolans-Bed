@@ -11,7 +11,7 @@ for a truck or trailer. Rated **300 lb**, and checked at 600 lb for kids jumping
 | **[Design & build guide](docs/DESIGN.md)** | How it stands up without a wall, every joint, router jigs, insert technique, build & assembly order, safety checklist |
 | **[Cut list & rail layout](docs/CUTLIST.md)** | Parts, boards to buy, inserts, dado/insert positions ([CSV](docs/cutlist.csv)) |
 | **[Structural checks](docs/CALCS.md)** | Twin and full variants |
-| **[Material cost](docs/COST.md)** | Itemized Menards estimate with MN sales tax: **about $440–710 for the twin** |
+| **[Material cost](docs/COST.md)** | Itemized Menards estimate with MN sales tax: **about $480–780 for the twin** |
 | **[3D viewer](viewer/index.html)** | Download and open in a browser: orbit, explode, click any part for its cut size |
 
 **Twin (default):** 81-3/4" L × 48-1/4" W × 72" H · deck at 54" · 46-3/4" lounge headroom ·
@@ -29,7 +29,7 @@ node model/render.js                     # re-render docs/img (needs playwright)
 ```
 
 Parameters (mattress size and thickness, deck height, post size, ladder angle and width, rib
-count, spindle gap) are at the top of `model/bed.py`. The script checks every part for
+count, guard slat gap) are at the top of `model/bed.py`. The script checks every part for
 unintended overlaps and prints a demand/capacity ratio for each structural check, so if a
 change breaks something you'll see it.
 

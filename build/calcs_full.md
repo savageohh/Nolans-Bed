@@ -3,7 +3,7 @@
 - Overall: **81 3/4" L x 64 1/4" W x 72" H**; mattress pocket 75 3/4" x 55 1/4"
 - Deck top 54", mattress top 62", guard cap 68 1/2" (**6.5in above an 8in mattress**; standard minimum is 5in)
 - Lounge headroom: 46 3/4" under the rails, 49 3/4" under the deck ribs
-- Empty weight ≈ **374 lb** (without mattress)
+- Empty weight ≈ **372 lb** (without mattress)
 - Geometry collision check: **PASS** — no unintended overlaps
 
 | Check | Demand | Capacity | Unit | Use | Basis |
@@ -14,15 +14,15 @@
 | Rail bearing on post housing shoulder | 226.60 | 425.00 | psi | 53% | Fc-perp of rail; bolts ignored |
 | Deck rib bending (45% of 600 lb on one rib) | 1,221.31 | 1,509.37 | psi | 81% | 2x4 on edge, span 55.8in, plywood composite action ignored |
 | Rib end bearing in rail dado | 178.91 | 425.00 | psi | 42% | 1/2 x 1-1/2 bearing |
-| Post compression (everything on one post) | 97.55 | 834.80 | psi | 12% | unbraced 72in, Cp=0.66 |
-| Guard cap bending (200 lb outward, longest bay) | 836.73 | 1,312.50 | psi | 64% | flat 2x4 bending about its 3.5in depth, bay 51.2in, spindles/bottom rail ignored |
+| Post compression (everything on one post) | 97.35 | 834.80 | psi | 12% | unbraced 72in, Cp=0.66 |
+| Guard cap bending (200 lb outward, longest bay) | 677.69 | 747.50 | psi | 91% | flat 1x6 pine bending about its 5.5in width, bay 51.2in, top rail/slats ignored |
 | Ladder-side guard stile: insert withdrawal | 203.70 | 300.00 | lb | 68% | allowable 300 lb per 3/8-16 insert in SPF face grain (verify with a pull test) |
 | Ladder tread bending (600 lb mid-tread) | 1,054.55 | 1,308.12 | psi | 81% | 2x6 flat |
 | Sway, side-to-side (150 lb push at deck) | 0.01 | 0.12 | in | 9% | 4 posts, 30.2in free, joints at 50% fixity |
 | Post bending from that push | 92.60 | 1,312.50 | psi | 7% |  |
 | Sway, lengthwise: shear-panel bolts (150 lb) | 25.00 | 150.00 | lb/bolt | 17% | 6 bolts top row, 150 lb each allowable (conservative) |
 
-Tipping (empty bed, someone pulling sideways on the guard cap): ≈ **176 lb** side-to-side, ≈ 223 lb end-to-end. With a kid on the deck the bed gets more stable, not less, but a furniture anti-tip strap to a wall stud is cheap insurance (it carries no structural load).
+Tipping (empty bed, someone pulling sideways on the guard cap): ≈ **175 lb** side-to-side, ≈ 222 lb end-to-end. With a kid on the deck the bed gets more stable, not less, but a furniture anti-tip strap to a wall stud is cheap insurance (it carries no structural load).
 
 
 ### Modules (for transport)
@@ -37,6 +37,6 @@ Tipping (empty bed, someone pulling sideways on the guard cap): ≈ **176 lb** s
 | Back panel | 2 | 31 lb | 75 3/4" x 2" x 36 3/4" |
 | Deck panel 1 | 6 | 55 lb | 37 3/4" x 56 1/8" x 4 1/4" |
 | Deck panel 2 | 6 | 55 lb | 37 3/4" x 56 1/8" x 4 1/4" |
-| Guard (back) | 19 | 23 lb | 75 3/4" x 3 1/2" x 21 1/2" |
-| Guard (front) | 15 | 17 lb | 58 1/4" x 3 1/2" x 21 1/2" |
+| Guard (back) | 20 | 22 lb | 75 3/4" x 5 1/2" x 21 1/2" |
+| Guard (front) | 16 | 16 lb | 58 1/4" x 5 1/2" x 21 1/2" |
 | Ladder | 9 | 28 lb | 17" x 26 13/16" x 57 7/8" |
