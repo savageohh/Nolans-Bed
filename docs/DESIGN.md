@@ -234,6 +234,9 @@ side and mark all the housings at once, so the bands match exactly.
 Full board and sheet counts are in [CUTLIST.md](CUTLIST.md): about 17 2x4s, 6 2x6s, 1 2x8,
 2 2x10s, 4 2x2s, 1 1x4 (all 8 ft), plus one sheet each of 3/4" and 1/2" ply.
 
+**Cost:** about **$410–650 in materials before tax** for the twin (about $440–710 with Minnesota tax),
+plus $130–250 if you need to buy router bits and jig stock. The itemized list is in [COST.md](COST.md).
+
 ## 8. Build order
 
 1. **Buy and acclimate** the lumber indoors for a week. Pick straight stock and sight down every board.

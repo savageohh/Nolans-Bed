@@ -44,6 +44,36 @@ RIBS_PER_PANEL = 5 if ARGS.full else 4   # wider span -> closer ribs
 SPINDLE_GAP = 3.0             # target clear gap (max allowed 3.5)
 KERF = 0.125
 
+# ------------------------------------------------------------------ pricing
+# Estimated Menards shelf prices (low, high) in USD, late 2026. Check menards.com for
+# your store and edit these -- docs/COST.md is regenerated from them.
+PRICES = {
+    # lumber, 8 ft, kiln-dried S4S (SPF / Doug-fir / SYP), #2 & better
+    "2x2": (2.50, 4.00), "2x4": (3.50, 5.00), "2x6": (5.50, 8.00), "2x8": (8.00, 11.00),
+    "2x10": (11.00, 15.00), "1x4": (4.00, 9.00),
+    # plywood, 4x8 sheet
+    "ply34": (55.00, 75.00),     # 3/4in sanded pine/birch (Baltic birch ~$70)
+    "ply12": (40.00, 55.00),     # 1/2in BC sanded
+    # hardware
+    "insert 3/8-16 (pack of 50)": (14.00, 32.00),   # zinc knife-thread 50pk .. 2x25pk E-Z Hex softwood
+    "insert 1/4-20 (pack of 25)": (8.00, 16.00),
+    '3/8-16 x 3-3/4"': (1.00, 1.80), '3/8-16 x 4-1/4"': (1.20, 2.00), '3/8-16 x 2-1/4"': (0.60, 1.20),
+    '1/4-20 x 1"': (0.20, 0.40), '1/4-20 x 2"': (0.25, 0.50),
+    "fender washer 3/8": (0.15, 0.35), "fender washer 1/4": (0.10, 0.20),
+    "leveling glide 3/8-16 (4 pack)": (8.00, 15.00), "anti-tip strap": (8.00, 15.00),
+    # consumables
+    "wood glue (quart)": (10.00, 20.00), "screws 1-1/4 & 2-1/2 (boxes)": (15.00, 25.00),
+    "water-based poly (2 quarts)": (25.00, 45.00), "sandpaper assortment": (15.00, 25.00),
+}
+TOOLS = {   # optional, only if you don't already have them
+    "1/2in upcut spiral bit": (20.00, 40.00), "3/4in top-bearing pattern bit": (20.00, 35.00),
+    "1/2in roundover bit": (15.00, 30.00), "1/4in roundover bit": (12.00, 25.00),
+    "slot cutter (panel grooves)": (25.00, 45.00), "guide bushing set": (20.00, 35.00),
+    "insert drive bits": (8.00, 15.00), "jig stock (1x4s, ply scrap, clamps excluded)": (10.00, 25.00),
+}
+SPARE_LUMBER = 0.15            # extra boards for defects/mistakes
+TAX = {"MN state only": 0.06875, "Minneapolis (combined)": 0.09025}
+
 T = 1.5                       # 2x thickness
 W2 = {"2x2": 1.5, "2x4": 3.5, "2x6": 5.5, "2x8": 7.25, "2x10": 9.25}
 RAIL = "2x10"                 # long rails
@@ -90,6 +120,10 @@ def part(name, module, stock, box=None, *, extra=0.0, rot=None, cut=None, housed
 def ins(size, where, n):
     inserts.append((size, where, n))
 
+bolts = defaultdict(int)  # spec -> qty (one fender washer each)
+def bolt(spec, n):
+    bolts[spec] += n
+
 # ------------------------------------------------------------------- posts
 for end, x0 in (("head", 0.0), ("foot", LO - PX)):
     mod = f"End frame ({end})"
@@ -113,9 +147,11 @@ for side, (y0, y1), posts in (("front", (YF0, YF1), ("front",)), ("back", (YB0, 
     part(f"Long rail ({side})", f"Long rail ({side})", RAIL, (0, LO, y0, y1, RAIL_BOT, RAIL_TOP),
          housed=["Post"], note="sits in 1/2in housings; 2 bolts each end through post")
     ins("3/8-16", f"{side} rail outer face at posts (rail-to-post bolts)", 4)
+    bolt('3/8-16 x 3-3/4"', 4)
 part("Back stretcher", "Back stretcher", "2x6", (0, LO, YB0, YB1, BACK_STRETCHER_Z, BACK_STRETCHER_Z + 5.5),
      housed=["Post"], note="in 1/2in housings; 2 bolts each end through post")
 ins("3/8-16", "back stretcher inner end faces (stretcher-to-post bolts)", 4)
+bolt('3/8-16 x 3-3/4"', 4)
 
 # back shear panel + top cleat
 part("Back shear panel", "Back panel", "ply12",
@@ -125,6 +161,8 @@ part("Back panel top cleat", "Back panel", "2x2", (PX, LO - PX, YB0, YB0 + T, RA
      extra=-0.125, note="glued to panel; 1/4-20 bolts up into rail bottom edge")
 ins("1/4-20", "back stretcher inner face (panel bolts)", 6)
 ins("1/4-20", "back rail bottom edge (panel cleat bolts)", 6)
+bolt('1/4-20 x 1"', 6)
+bolt('1/4-20 x 2"', 6)
 
 # ------------------------------------------------------------------- deck
 plen = (LIN - 3 * 0.0625) / 2
@@ -173,9 +211,13 @@ assert all(abs(mid - (rx + T / 2)) > 1.75 + T / 2 + 0.75 for rx in rib_x), "cent
 guard("back", GB, PX, LO - PX, [PX, mid - 1.75, LO - PX - 3.5], 2)
 ins("3/8-16", "post inner x-faces (back guard stiles)", 4)
 ins("3/8-16", "back rail outer face (back guard stiles)", 6)
+bolt('3/8-16 x 4-1/4"', 4)
+bolt('3/8-16 x 2-1/4"', 6)
 guard("front", GF, PX, OPEN0, [PX, OPEN0 - 3.5], 1)
 ins("3/8-16", "post inner x-face (front guard stile)", 2)
 ins("3/8-16", "front rail outer face (front guard stiles)", 4)
+bolt('3/8-16 x 4-1/4"', 2)
+bolt('3/8-16 x 2-1/4"', 4)
 
 # ----------------------------------------------------------------- ladder
 th = math.radians(LADDER_ANGLE)
@@ -204,6 +246,7 @@ part("Ladder header", "Ladder", "2x4", (sx_list[0], sx_list[1] + T, YF0 - T, YF0
 part("Ladder hook lip", "Ladder", "1x4", (sx_list[0], sx_list[1] + T, YF0 - T, YF1 - 0.25, RAIL_TOP, RAIL_TOP + 0.75),
      note="glued/screwed to header top; hooks over rail")
 ins("3/8-16", "front rail outer face (ladder header)", 3)
+bolt('3/8-16 x 2-1/4"', 3)
 
 # ---------------------------------------------------------------- checks
 def overlap(a, b):
@@ -400,6 +443,7 @@ def write_outputs():
 
     # board buying: first-fit-decreasing into 8ft boards
     need = defaultdict(list)
+    board_n = {}
     for p in parts:
         stk = p["stock"]
         if stk.startswith("ply"):
@@ -420,11 +464,13 @@ def write_outputs():
             else:
                 boards.append([L])
         lines.append(f"| {stk} | {len(boards)} | {len(Ls)} pieces |")
+        board_n[stk] = len(boards)
     ply = defaultdict(float)
     for p in parts:
         if p["stock"].startswith("ply"):
             t, w, L = dims(p)
             ply[p["stock"]] += w * L
+    sheet_n = {k: math.ceil(v / (48 * 96) * 1.05) for k, v in ply.items()}
     lines += ["", "| Sheet | Sheets | Parts |", "|---|---:|---|",
               f"| 3/4in plywood (birch/maple or sanded pine, BC or better) | {math.ceil(ply['ply34'] / (48*96) * 1.05)} | 2 deck panels |",
               f"| 1/2in plywood (any cabinet/BC grade; actual ~15/32) | {math.ceil(ply['ply12'] / (48*96) * 1.05)} | back shear panel + 2 end panels |"]
@@ -466,6 +512,51 @@ def write_outputs():
         f.write("\n".join(lines) + "\n")
     with open(os.path.join(ROOT, "docs", "cutlist.csv"), "w", newline="") as f:
         csv.writer(f).writerows(csvrows)
+    write_cost(board_n, sheet_n, tot)
+
+def write_cost(board_n, sheet_n, ins_tot):
+    rows = []   # (section, item, qty, low, high)
+    for stk, n in sorted(board_n.items()):
+        rows.append(("Lumber", f"{stk} x 8 ft", n, *PRICES[stk]))
+        extra = math.ceil(n * SPARE_LUMBER)
+        rows.append(("Lumber", f"{stk} x 8 ft — spares (~{SPARE_LUMBER:.0%})", extra, *PRICES[stk]))
+    for k, nm in (("ply34", "3/4in plywood 4x8"), ("ply12", "1/2in plywood 4x8")):
+        rows.append(("Plywood", nm, sheet_n[k], *PRICES[k]))
+    rows.append(("Inserts & bolts", "3/8-16 inserts (packs of 50)", math.ceil((ins_tot["3/8-16"] + 6) / 50), *PRICES["insert 3/8-16 (pack of 50)"]))
+    rows.append(("Inserts & bolts", "1/4-20 inserts (packs of 25)", math.ceil((ins_tot["1/4-20"] + 4) / 25), *PRICES["insert 1/4-20 (pack of 25)"]))
+    for spec, n in sorted(bolts.items()):
+        rows.append(("Inserts & bolts", f"bolt {spec}", n, *PRICES[spec]))
+    n38 = sum(n for s, n in bolts.items() if s.startswith("3/8"))
+    n14 = sum(n for s, n in bolts.items() if s.startswith("1/4"))
+    rows.append(("Inserts & bolts", "fender washers 3/8", n38, *PRICES["fender washer 3/8"]))
+    rows.append(("Inserts & bolts", "fender washers 1/4", n14, *PRICES["fender washer 1/4"]))
+    rows.append(("Other hardware", "leveling glides 3/8-16 (4 pack)", 1, *PRICES["leveling glide 3/8-16 (4 pack)"]))
+    rows.append(("Other hardware", "anti-tip strap", 1, *PRICES["anti-tip strap"]))
+    for k in ("wood glue (quart)", "screws 1-1/4 & 2-1/2 (boxes)", "water-based poly (2 quarts)", "sandpaper assortment"):
+        rows.append(("Consumables", k, 1, *PRICES[k]))
+
+    money = lambda x: f"${x:,.0f}"
+    out = [f"## {MATTRESS['name']}", "", "| Section | Item | Qty | Each | Line total |", "|---|---|---:|---:|---:|"]
+    sec = defaultdict(lambda: [0.0, 0.0])
+    for s, item, q, lo, hi in rows:
+        if q == 0:
+            continue
+        sec[s][0] += q * lo; sec[s][1] += q * hi
+        each = f"${lo:.2f}–{hi:.2f}"
+        out.append(f"| {s} | {item} | {q} | {each} | {money(q * lo)}–{money(q * hi)} |")
+    lo = sum(v[0] for v in sec.values()); hi = sum(v[1] for v in sec.values())
+    out += ["", "| Subtotal | Low | High |", "|---|---:|---:|"]
+    for s, (a, b) in sec.items():
+        out.append(f"| {s} | {money(a)} | {money(b)} |")
+    out.append(f"| **Materials before tax** | **{money(lo)}** | **{money(hi)}** |")
+    for nm, r in TAX.items():
+        out.append(f"| Total with {nm} tax ({r * 100:.3f}%) | {money(lo * (1 + r))} | {money(hi * (1 + r))} |")
+    tlo = sum(v[0] for v in TOOLS.values()); thi = sum(v[1] for v in TOOLS.values())
+    out += ["", f"Optional tools & jig stock if you don't own them: **{money(tlo)}–{money(thi)}** "
+            "(" + ", ".join(TOOLS) + ").", ""]
+    with open(os.path.join(ROOT, "build", f"cost_{MATTRESS['name'].lower()}.md"), "w") as f:
+        f.write("\n".join(out) + "\n")
+    summary["cost"] = (lo, hi)
 
 def calc_md():
     s = summary
