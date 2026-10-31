@@ -1,0 +1,1195 @@
+{
+ "summary": {
+  "variant": "Twin",
+  "overall": [
+   81.75,
+   48.25,
+   72.0
+  ],
+  "lounge_clear": 46.75,
+  "rib_clear": 49.75,
+  "deck_top": 54.0,
+  "mattress_top": 62.0,
+  "cap_top": 68.5,
+  "empty_w": 316.8837186559384,
+  "tip_y": 111.60320748283964,
+  "tip_x": 189.0893722636713,
+  "pocket": [
+   75.75,
+   39.25
+  ],
+  "collisions": []
+ },
+ "parts": [
+  {
+   "name": "Post head-front",
+   "module": "End frame (head)",
+   "stock": "2x4 (laminate pairs)",
+   "box": [
+    0.0,
+    3.0,
+    0.0,
+    3.5,
+    0,
+    72.0
+   ],
+   "rot": null,
+   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "cut": "3 1/2\" x 72\""
+  },
+  {
+   "name": "Post head-back",
+   "module": "End frame (head)",
+   "stock": "2x4 (laminate pairs)",
+   "box": [
+    0.0,
+    3.0,
+    44.75,
+    48.25,
+    0,
+    72.0
+   ],
+   "rot": null,
+   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "cut": "3 1/2\" x 72\""
+  },
+  {
+   "name": "End lower stretcher (head)",
+   "module": "End frame (head)",
+   "stock": "2x6",
+   "box": [
+    1.5,
+    3.0,
+    3.5,
+    44.75,
+    3.0,
+    8.5
+   ],
+   "rot": null,
+   "note": "1/2in tenons both ends, glued",
+   "cut": "5 1/2\" x 43 3/4\""
+  },
+  {
+   "name": "End apron (head)",
+   "module": "End frame (head)",
+   "stock": "2x8",
+   "box": [
+    1.5,
+    3.0,
+    3.5,
+    44.75,
+    38.75,
+    46.0
+   ],
+   "rot": null,
+   "note": "1/2in tenons both ends, glued",
+   "cut": "7 1/4\" x 43 3/4\""
+  },
+  {
+   "name": "End mid rail (head)",
+   "module": "End frame (head)",
+   "stock": "2x6",
+   "box": [
+    1.5,
+    3.0,
+    3.5,
+    44.75,
+    56.5,
+    62.0
+   ],
+   "rot": null,
+   "note": "1/2in tenons both ends, glued",
+   "cut": "5 1/2\" x 43 3/4\""
+  },
+  {
+   "name": "End top rail (head)",
+   "module": "End frame (head)",
+   "stock": "2x4",
+   "box": [
+    1.5,
+    3.0,
+    3.5,
+    44.75,
+    68.5,
+    72.0
+   ],
+   "rot": null,
+   "note": "1/2in tenons both ends, glued",
+   "cut": "3 1/2\" x 43 3/4\""
+  },
+  {
+   "name": "End panel (head)",
+   "module": "End frame (head)",
+   "stock": "1/2in plywood",
+   "box": [
+    2.0,
+    2.5,
+    3.5,
+    44.75,
+    62.0,
+    68.5
+   ],
+   "rot": null,
+   "note": "in 1/2in routed grooves, glued",
+   "cut": "7 1/4\" x 42\""
+  },
+  {
+   "name": "Post foot-front",
+   "module": "End frame (foot)",
+   "stock": "2x4 (laminate pairs)",
+   "box": [
+    78.75,
+    81.75,
+    0.0,
+    3.5,
+    0,
+    72.0
+   ],
+   "rot": null,
+   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "cut": "3 1/2\" x 72\""
+  },
+  {
+   "name": "Post foot-back",
+   "module": "End frame (foot)",
+   "stock": "2x4 (laminate pairs)",
+   "box": [
+    78.75,
+    81.75,
+    44.75,
+    48.25,
+    0,
+    72.0
+   ],
+   "rot": null,
+   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "cut": "3 1/2\" x 72\""
+  },
+  {
+   "name": "End lower stretcher (foot)",
+   "module": "End frame (foot)",
+   "stock": "2x6",
+   "box": [
+    78.75,
+    80.25,
+    3.5,
+    44.75,
+    3.0,
+    8.5
+   ],
+   "rot": null,
+   "note": "1/2in tenons both ends, glued",
+   "cut": "5 1/2\" x 43 3/4\""
+  },
+  {
+   "name": "End apron (foot)",
+   "module": "End frame (foot)",
+   "stock": "2x8",
+   "box": [
+    78.75,
+    80.25,
+    3.5,
+    44.75,
+    38.75,
+    46.0
+   ],
+   "rot": null,
+   "note": "1/2in tenons both ends, glued",
+   "cut": "7 1/4\" x 43 3/4\""
+  },
+  {
+   "name": "End mid rail (foot)",
+   "module": "End frame (foot)",
+   "stock": "2x6",
+   "box": [
+    78.75,
+    80.25,
+    3.5,
+    44.75,
+    56.5,
+    62.0
+   ],
+   "rot": null,
+   "note": "1/2in tenons both ends, glued",
+   "cut": "5 1/2\" x 43 3/4\""
+  },
+  {
+   "name": "End top rail (foot)",
+   "module": "End frame (foot)",
+   "stock": "2x4",
+   "box": [
+    78.75,
+    80.25,
+    3.5,
+    44.75,
+    68.5,
+    72.0
+   ],
+   "rot": null,
+   "note": "1/2in tenons both ends, glued",
+   "cut": "3 1/2\" x 43 3/4\""
+  },
+  {
+   "name": "End panel (foot)",
+   "module": "End frame (foot)",
+   "stock": "1/2in plywood",
+   "box": [
+    79.25,
+    79.75,
+    3.5,
+    44.75,
+    62.0,
+    68.5
+   ],
+   "rot": null,
+   "note": "in 1/2in routed grooves, glued",
+   "cut": "7 1/4\" x 42\""
+  },
+  {
+   "name": "Long rail (front)",
+   "module": "Long rail (front)",
+   "stock": "2x10",
+   "box": [
+    0,
+    81.75,
+    3.0,
+    4.5,
+    46.75,
+    56.0
+   ],
+   "rot": null,
+   "note": "sits in 1/2in housings; 2 bolts each end through post",
+   "cut": "9 1/4\" x 81 3/4\""
+  },
+  {
+   "name": "Long rail (back)",
+   "module": "Long rail (back)",
+   "stock": "2x10",
+   "box": [
+    0,
+    81.75,
+    43.75,
+    45.25,
+    46.75,
+    56.0
+   ],
+   "rot": null,
+   "note": "sits in 1/2in housings; 2 bolts each end through post",
+   "cut": "9 1/4\" x 81 3/4\""
+  },
+  {
+   "name": "Back stretcher",
+   "module": "Back stretcher",
+   "stock": "2x6",
+   "box": [
+    0,
+    81.75,
+    43.75,
+    45.25,
+    10.0,
+    15.5
+   ],
+   "rot": null,
+   "note": "in 1/2in housings; 2 bolts each end through post",
+   "cut": "5 1/2\" x 81 3/4\""
+  },
+  {
+   "name": "Back shear panel",
+   "module": "Back panel",
+   "stock": "1/2in plywood",
+   "box": [
+    3.0,
+    78.75,
+    43.25,
+    43.75,
+    10.0,
+    46.75
+   ],
+   "rot": null,
+   "note": "glued+screwed to top cleat; 1/4-20 bolts into stretcher",
+   "cut": "36 3/4\" x 75 5/8\""
+  },
+  {
+   "name": "Back panel top cleat",
+   "module": "Back panel",
+   "stock": "2x2",
+   "box": [
+    3.0,
+    78.75,
+    43.75,
+    45.25,
+    45.25,
+    46.75
+   ],
+   "rot": null,
+   "note": "glued to panel; 1/4-20 bolts up into rail bottom edge",
+   "cut": "1 1/2\" x 75 5/8\""
+  },
+  {
+   "name": "Deck ply 1",
+   "module": "Deck panel 1",
+   "stock": "3/4in plywood",
+   "box": [
+    3.0625,
+    40.84375,
+    4.5625,
+    43.6875,
+    53.25,
+    54.0
+   ],
+   "rot": null,
+   "note": "vent holes/slots; glued+screwed to ribs",
+   "cut": "39 1/8\" x 37 3/4\""
+  },
+  {
+   "name": "Deck rib 1.1",
+   "module": "Deck panel 1",
+   "stock": "2x4",
+   "box": [
+    3.3125,
+    4.8125,
+    4.0625,
+    44.1875,
+    49.75,
+    53.25
+   ],
+   "rot": null,
+   "note": "ends drop into open-top stopped dados in rails",
+   "cut": "3 1/2\" x 40 1/8\""
+  },
+  {
+   "name": "Deck rib 1.2",
+   "module": "Deck panel 1",
+   "stock": "2x4",
+   "box": [
+    15.239583333333334,
+    16.739583333333336,
+    4.0625,
+    44.1875,
+    49.75,
+    53.25
+   ],
+   "rot": null,
+   "note": "ends drop into open-top stopped dados in rails",
+   "cut": "3 1/2\" x 40 1/8\""
+  },
+  {
+   "name": "Deck rib 1.3",
+   "module": "Deck panel 1",
+   "stock": "2x4",
+   "box": [
+    27.166666666666668,
+    28.666666666666668,
+    4.0625,
+    44.1875,
+    49.75,
+    53.25
+   ],
+   "rot": null,
+   "note": "ends drop into open-top stopped dados in rails",
+   "cut": "3 1/2\" x 40 1/8\""
+  },
+  {
+   "name": "Deck rib 1.4",
+   "module": "Deck panel 1",
+   "stock": "2x4",
+   "box": [
+    39.09375,
+    40.59375,
+    4.0625,
+    44.1875,
+    49.75,
+    53.25
+   ],
+   "rot": null,
+   "note": "ends drop into open-top stopped dados in rails",
+   "cut": "3 1/2\" x 40 1/8\""
+  },
+  {
+   "name": "Deck ply 2",
+   "module": "Deck panel 2",
+   "stock": "3/4in plywood",
+   "box": [
+    40.90625,
+    78.6875,
+    4.5625,
+    43.6875,
+    53.25,
+    54.0
+   ],
+   "rot": null,
+   "note": "vent holes/slots; glued+screwed to ribs",
+   "cut": "39 1/8\" x 37 3/4\""
+  },
+  {
+   "name": "Deck rib 2.1",
+   "module": "Deck panel 2",
+   "stock": "2x4",
+   "box": [
+    41.15625,
+    42.65625,
+    4.0625,
+    44.1875,
+    49.75,
+    53.25
+   ],
+   "rot": null,
+   "note": "ends drop into open-top stopped dados in rails",
+   "cut": "3 1/2\" x 40 1/8\""
+  },
+  {
+   "name": "Deck rib 2.2",
+   "module": "Deck panel 2",
+   "stock": "2x4",
+   "box": [
+    53.083333333333336,
+    54.583333333333336,
+    4.0625,
+    44.1875,
+    49.75,
+    53.25
+   ],
+   "rot": null,
+   "note": "ends drop into open-top stopped dados in rails",
+   "cut": "3 1/2\" x 40 1/8\""
+  },
+  {
+   "name": "Deck rib 2.3",
+   "module": "Deck panel 2",
+   "stock": "2x4",
+   "box": [
+    65.01041666666667,
+    66.51041666666667,
+    4.0625,
+    44.1875,
+    49.75,
+    53.25
+   ],
+   "rot": null,
+   "note": "ends drop into open-top stopped dados in rails",
+   "cut": "3 1/2\" x 40 1/8\""
+  },
+  {
+   "name": "Deck rib 2.4",
+   "module": "Deck panel 2",
+   "stock": "2x4",
+   "box": [
+    76.9375,
+    78.4375,
+    4.0625,
+    44.1875,
+    49.75,
+    53.25
+   ],
+   "rot": null,
+   "note": "ends drop into open-top stopped dados in rails",
+   "cut": "3 1/2\" x 40 1/8\""
+  },
+  {
+   "name": "Guard stile back 1",
+   "module": "Guard (back)",
+   "stock": "2x4",
+   "box": [
+    3.0,
+    6.5,
+    45.25,
+    46.75,
+    47.0,
+    67.0
+   ],
+   "rot": null,
+   "note": "half-lapped to bottom rail; stub tenon into cap groove",
+   "cut": "3 1/2\" x 20 1/2\""
+  },
+  {
+   "name": "Guard stile back 2",
+   "module": "Guard (back)",
+   "stock": "2x4",
+   "box": [
+    45.125,
+    48.625,
+    45.25,
+    46.75,
+    47.0,
+    67.0
+   ],
+   "rot": null,
+   "note": "half-lapped to bottom rail; stub tenon into cap groove",
+   "cut": "3 1/2\" x 20 1/2\""
+  },
+  {
+   "name": "Guard stile back 3",
+   "module": "Guard (back)",
+   "stock": "2x4",
+   "box": [
+    75.25,
+    78.75,
+    45.25,
+    46.75,
+    47.0,
+    67.0
+   ],
+   "rot": null,
+   "note": "half-lapped to bottom rail; stub tenon into cap groove",
+   "cut": "3 1/2\" x 20 1/2\""
+  },
+  {
+   "name": "Guard bottom rail (back)",
+   "module": "Guard (back)",
+   "stock": "2x4",
+   "box": [
+    3.0,
+    78.75,
+    45.25,
+    46.75,
+    55.0,
+    58.5
+   ],
+   "rot": null,
+   "note": "1/2in groove in top edge for spindles",
+   "cut": "3 1/2\" x 75 3/4\""
+  },
+  {
+   "name": "Guard cap (back)",
+   "module": "Guard (back)",
+   "stock": "2x4",
+   "box": [
+    3.0,
+    78.75,
+    44.25,
+    47.75,
+    67.0,
+    68.5
+   ],
+   "rot": null,
+   "note": "laid flat; 1/2in groove underside; 1/2in roundover",
+   "cut": "3 1/2\" x 75 3/4\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    9.458333333333334,
+    10.958333333333334,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.96in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    13.916666666666668,
+    15.416666666666668,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.96in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    18.375,
+    19.875,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.96in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    22.833333333333336,
+    24.333333333333336,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.96in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    27.29166666666667,
+    28.79166666666667,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.96in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    31.750000000000007,
+    33.25000000000001,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.96in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    36.208333333333336,
+    37.708333333333336,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.96in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    40.66666666666667,
+    42.16666666666667,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.96in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    51.142857142857146,
+    52.642857142857146,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.52in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    55.16071428571429,
+    56.66071428571429,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.52in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    59.17857142857143,
+    60.67857142857143,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.52in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    63.19642857142857,
+    64.69642857142857,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.52in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    67.21428571428572,
+    68.71428571428572,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.52in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle back",
+   "module": "Guard (back)",
+   "stock": "2x2",
+   "box": [
+    71.23214285714286,
+    72.73214285714286,
+    45.25,
+    46.75,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.52in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Guard stile front 1",
+   "module": "Guard (front)",
+   "stock": "2x4",
+   "box": [
+    3.0,
+    6.5,
+    1.5,
+    3.0,
+    47.0,
+    67.0
+   ],
+   "rot": null,
+   "note": "half-lapped to bottom rail; stub tenon into cap groove",
+   "cut": "3 1/2\" x 20 1/2\""
+  },
+  {
+   "name": "Guard stile front 2",
+   "module": "Guard (front)",
+   "stock": "2x4",
+   "box": [
+    57.75,
+    61.25,
+    1.5,
+    3.0,
+    47.0,
+    67.0
+   ],
+   "rot": null,
+   "note": "half-lapped to bottom rail; stub tenon into cap groove",
+   "cut": "3 1/2\" x 20 1/2\""
+  },
+  {
+   "name": "Guard bottom rail (front)",
+   "module": "Guard (front)",
+   "stock": "2x4",
+   "box": [
+    3.0,
+    61.25,
+    1.5,
+    3.0,
+    55.0,
+    58.5
+   ],
+   "rot": null,
+   "note": "1/2in groove in top edge for spindles",
+   "cut": "3 1/2\" x 58 1/4\""
+  },
+  {
+   "name": "Guard cap (front)",
+   "module": "Guard (front)",
+   "stock": "2x4",
+   "box": [
+    3.0,
+    61.25,
+    0.5,
+    4.0,
+    67.0,
+    68.5
+   ],
+   "rot": null,
+   "note": "laid flat; 1/2in groove underside; 1/2in roundover",
+   "cut": "3 1/2\" x 58 1/4\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    9.395833333333334,
+    10.895833333333334,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    13.791666666666668,
+    15.291666666666668,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    18.1875,
+    19.6875,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    22.583333333333336,
+    24.083333333333336,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    26.97916666666667,
+    28.47916666666667,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    31.375000000000007,
+    32.87500000000001,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    35.770833333333336,
+    37.270833333333336,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    40.16666666666667,
+    41.66666666666667,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    44.56250000000001,
+    46.06250000000001,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    48.95833333333334,
+    50.45833333333334,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Spindle front",
+   "module": "Guard (front)",
+   "stock": "2x2",
+   "box": [
+    53.35416666666668,
+    54.85416666666668,
+    1.5,
+    3.0,
+    58.5,
+    67.0
+   ],
+   "rot": null,
+   "note": "1/2in stub tenons both ends; clear gap 2.90in",
+   "cut": "1 1/2\" x 9 1/2\""
+  },
+  {
+   "name": "Ladder stile 1",
+   "module": "Ladder",
+   "stock": "2x6",
+   "box": null,
+   "rot": {
+    "center": [
+     62.25,
+     -9.775321266614915,
+     28.94055539414559
+    ],
+    "size": [
+     1.5,
+     5.5,
+     59.593955258651086
+    ],
+    "angle": -20.0
+   },
+   "note": "70 deg; housed tread dados; notch for header",
+   "cut": "5 1/2\" x 61 5/8\""
+  },
+  {
+   "name": "Ladder stile 2",
+   "module": "Ladder",
+   "stock": "2x6",
+   "box": null,
+   "rot": {
+    "center": [
+     77.75,
+     -9.775321266614915,
+     28.94055539414559
+    ],
+    "size": [
+     1.5,
+     5.5,
+     59.593955258651086
+    ],
+    "angle": -20.0
+   },
+   "note": "70 deg; housed tread dados; notch for header",
+   "cut": "5 1/2\" x 61 5/8\""
+  },
+  {
+   "name": "Ladder tread 1",
+   "module": "Ladder",
+   "stock": "2x6",
+   "box": [
+    63.0,
+    77.0,
+    -19.661766473398206,
+    -14.161766473398206,
+    7.833333333333334,
+    9.333333333333334
+   ],
+   "rot": null,
+   "note": "2x6 flat, housed 1/2in each end, glued + 2 screws",
+   "cut": "5 1/2\" x 15\""
+  },
+  {
+   "name": "Ladder tread 2",
+   "module": "Ladder",
+   "stock": "2x6",
+   "box": [
+    63.0,
+    77.0,
+    -16.264710953580316,
+    -10.764710953580316,
+    17.166666666666668,
+    18.666666666666668
+   ],
+   "rot": null,
+   "note": "2x6 flat, housed 1/2in each end, glued + 2 screws",
+   "cut": "5 1/2\" x 15\""
+  },
+  {
+   "name": "Ladder tread 3",
+   "module": "Ladder",
+   "stock": "2x6",
+   "box": [
+    63.0,
+    77.0,
+    -12.867655433762426,
+    -7.367655433762426,
+    26.5,
+    28.0
+   ],
+   "rot": null,
+   "note": "2x6 flat, housed 1/2in each end, glued + 2 screws",
+   "cut": "5 1/2\" x 15\""
+  },
+  {
+   "name": "Ladder tread 4",
+   "module": "Ladder",
+   "stock": "2x6",
+   "box": [
+    63.0,
+    77.0,
+    -9.470599913944536,
+    -3.970599913944537,
+    35.833333333333336,
+    37.333333333333336
+   ],
+   "rot": null,
+   "note": "2x6 flat, housed 1/2in each end, glued + 2 screws",
+   "cut": "5 1/2\" x 15\""
+  },
+  {
+   "name": "Ladder tread 5",
+   "module": "Ladder",
+   "stock": "2x6",
+   "box": [
+    63.0,
+    77.0,
+    -6.073544394126646,
+    -0.5735443941266465,
+    45.16666666666667,
+    46.66666666666667
+   ],
+   "rot": null,
+   "note": "2x6 flat, housed 1/2in each end, glued + 2 screws",
+   "cut": "5 1/2\" x 15\""
+  },
+  {
+   "name": "Ladder header",
+   "module": "Ladder",
+   "stock": "2x4",
+   "box": [
+    61.5,
+    78.5,
+    1.5,
+    3.0,
+    52.5,
+    56.0
+   ],
+   "rot": null,
+   "note": "let into stile notches; bolts to rail face",
+   "cut": "3 1/2\" x 17\""
+  },
+  {
+   "name": "Ladder hook lip",
+   "module": "Ladder",
+   "stock": "1x4 (rip to width)",
+   "box": [
+    61.5,
+    78.5,
+    1.5,
+    4.25,
+    56.0,
+    56.75
+   ],
+   "rot": null,
+   "note": "glued/screwed to header top; hooks over rail",
+   "cut": "2 3/4\" x 17\""
+  }
+ ],
+ "mattress": [
+  3.375,
+  78.375,
+  5.125,
+  43.125,
+  54.0,
+  62.0
+ ]
+}

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nolan's Loft Bed</title>
+<style>
+  :root { --bg:#f6f4ef; --fg:#1d1d1b; --muted:#6b6a65; --panel:#ffffffd9; --line:#d9d5cc; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#1b1c1e; --fg:#ecebe7; --muted:#a3a29c; --panel:#26272ad9; --line:#3a3b3f; } }
+  :root[data-theme="dark"] { --bg:#1b1c1e; --fg:#ecebe7; --muted:#a3a29c; --panel:#26272ad9; --line:#3a3b3f; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--fg); font:14px/1.4 system-ui, sans-serif; overflow:hidden; }
+  #c { position:fixed; inset:0; }
+  .panel { position:fixed; background:var(--panel); backdrop-filter:blur(6px); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+  #ctl { top:12px; left:12px; max-width:min(300px, calc(100vw - 48px)); max-height:calc(100vh - 140px); overflow:auto; }
+  #ctl h1 { font-size:15px; margin:0 0 2px; }
+  #ctl .sub { color:var(--muted); font-size:12px; margin-bottom:8px; }
+  #ctl label { display:flex; align-items:center; gap:6px; font-size:13px; cursor:pointer; }
+  .sw { width:12px; height:12px; border-radius:3px; flex:none; border:1px solid #0003; }
+  input[type=range] { width:100%; }
+  #info { bottom:12px; left:12px; right:12px; max-width:520px; min-height:20px; font-size:13px; }
+  #info b { font-size:14px; }
+  .row { display:flex; gap:6px; flex-wrap:wrap; margin:6px 0; }
+  button { font:inherit; font-size:12px; padding:4px 8px; border-radius:6px; border:1px solid var(--line); background:transparent; color:var(--fg); cursor:pointer; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="ctl" class="panel">
+  <h1>Nolan's loft bed</h1>
+  <div class="sub" id="sub"></div>
+  Explode <input id="ex" type="range" min="0" max="1" step="0.01" value="0">
+  <div class="row">
+    <button data-v="iso">Iso</button><button data-v="front">Front</button><button data-v="end">End</button><button data-v="top">Top</button>
+    <button id="mat">Mattress</button>
+  </div>
+  <div id="mods"></div>
+</div>
+<div id="info" class="panel">Drag to orbit · scroll/pinch to zoom · tap a part for details</div>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const M = /*MODEL*/null;
+const S = M.summary;
+const fmt = x => { const s = Math.round(x*16), w = Math.floor(s/16), f = s%16; if (!f) return w+'"'; let n=f,d=16; while(n%2===0){n/=2;d/=2;} return (w? w+' ':'')+n+'/'+d+'"'; };
+document.getElementById('sub').textContent =
+  `${S.variant} · ${fmt(S.overall[0])} L × ${fmt(S.overall[1])} W × ${fmt(S.overall[2])} H · lounge ${fmt(S.lounge_clear)} clear`;
+
+const COLORS = {
+  'End frame (head)':'#b48ead','End frame (foot)':'#b48ead','Long rail (front)':'#d08770','Long rail (back)':'#d08770',
+  'Back stretcher':'#bf616a','Back panel':'#c9b79c','Deck panel 1':'#e5c07b','Deck panel 2':'#d9b26a',
+  'Guard (back)':'#81a1c1','Guard (front)':'#88c0d0','Ladder':'#a3be8c'
+};
+const EXPLODE = {
+  'End frame (head)':[-30,0,0],'End frame (foot)':[30,0,0],'Long rail (front)':[0,-22,0],'Long rail (back)':[0,22,0],
+  'Back stretcher':[0,30,-6],'Back panel':[0,40,-4],'Deck panel 1':[-8,0,40],'Deck panel 2':[8,0,40],
+  'Guard (back)':[0,32,22],'Guard (front)':[0,-32,22],'Ladder':[0,-55,0]
+};
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, preserveDrawingBuffer:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const scene = new THREE.Scene();
+const dark = matchMedia('(prefers-color-scheme: dark)').matches && document.documentElement.dataset.theme !== 'light';
+scene.background = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#f6f4ef');
+const cam = new THREE.PerspectiveCamera(30, 1, 1, 5000);
+cam.up.set(0,0,1);
+const ctr = new OrbitControls(cam, canvas);
+const C = new THREE.Vector3(S.overall[0]/2, S.overall[1]/2, 36);
+ctr.target.copy(C);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x888877, 1.6));
+const sun = new THREE.DirectionalLight(0xffffff, 1.4); sun.position.set(-80,-120,200); scene.add(sun);
+const grid = new THREE.GridHelper(240, 20, dark?0x444444:0xcccccc, dark?0x333333:0xe0ddd5);
+grid.rotation.x = Math.PI/2; grid.position.set(C.x, C.y, 0); scene.add(grid);
+
+const groups = {}, pickables = [];
+const edgeMat = new THREE.LineBasicMaterial({ color: dark?0x111111:0x2b2b2b, transparent:true, opacity:.55 });
+for (const p of M.parts) {
+  if (!groups[p.module]) { const g = new THREE.Group(); g.userData.ex = EXPLODE[p.module]||[0,0,0]; groups[p.module]=g; scene.add(g); }
+  let geo, mesh;
+  const mat = new THREE.MeshStandardMaterial({ color: COLORS[p.module]||'#ccc', roughness:.85 });
+  if (p.box) {
+    const [x0,x1,y0,y1,z0,z1] = p.box;
+    geo = new THREE.BoxGeometry(x1-x0, y1-y0, z1-z0);
+    mesh = new THREE.Mesh(geo, mat); mesh.position.set((x0+x1)/2,(y0+y1)/2,(z0+z1)/2);
+  } else {
+    const r = p.rot; geo = new THREE.BoxGeometry(...r.size);
+    mesh = new THREE.Mesh(geo, mat); mesh.position.set(...r.center); mesh.rotation.x = r.angle*Math.PI/180;
+  }
+  mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), edgeMat));
+  mesh.userData.part = p; pickables.push(mesh); groups[p.module].add(mesh);
+}
+const [mx0,mx1,my0,my1,mz0,mz1] = M.mattress;
+const mattress = new THREE.Mesh(new THREE.BoxGeometry(mx1-mx0,my1-my0,mz1-mz0),
+  new THREE.MeshStandardMaterial({ color:0xf3f1ea, transparent:true, opacity:.55 }));
+mattress.position.set((mx0+mx1)/2,(my0+my1)/2,(mz0+mz1)/2); mattress.userData.ex=[0,0,70]; scene.add(mattress);
+document.getElementById('mat').onclick = () => { mattress.visible = !mattress.visible; };
+
+const mods = document.getElementById('mods');
+for (const name of Object.keys(groups)) {
+  const l = document.createElement('label');
+  l.innerHTML = `<input type="checkbox" checked><span class="sw" style="background:${COLORS[name]}"></span>${name}`;
+  l.querySelector('input').onchange = e => { groups[name].visible = e.target.checked; };
+  mods.appendChild(l);
+}
+const ex = document.getElementById('ex');
+const applyEx = () => { const t = +ex.value;
+  for (const g of Object.values(groups)) g.position.set(...g.userData.ex.map(v=>v*t));
+  mattress.position.z = (mz0+mz1)/2 + 70*t; };
+ex.oninput = applyEx;
+
+const VIEWS = { iso:[-1.1,-1.6,0.9], front:[0,-1,0.12], end:[-1,0,0.12], top:[0,-0.001,1] };
+function view(v){ const d = new THREE.Vector3(...VIEWS[v]).normalize().multiplyScalar(250); cam.position.copy(C).add(d); ctr.update(); }
+document.querySelectorAll('[data-v]').forEach(b => b.onclick = () => view(b.dataset.v));
+view('iso');
+
+const ray = new THREE.Raycaster(), ptr = new THREE.Vector2(); let down;
+canvas.addEventListener('pointerdown', e => down=[e.clientX,e.clientY]);
+canvas.addEventListener('pointerup', e => {
+  if (!down || Math.hypot(e.clientX-down[0], e.clientY-down[1]) > 5) return;
+  ptr.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); ray.setFromCamera(ptr, cam);
+  const hit = ray.intersectObjects(pickables.filter(m=>m.parent.visible), false)[0];
+  const info = document.getElementById('info');
+  if (!hit) { info.textContent = 'Tap a part for details'; return; }
+  const p = hit.object.userData.part;
+  info.innerHTML = `<b>${p.name}</b> — ${p.module}<br>${p.stock}, cut ${p.cut}${p.note? '<br><span style="color:var(--muted)">'+p.note+'</span>':''}`;
+});
+function resize(){ renderer.setSize(innerWidth, innerHeight, false); cam.aspect = innerWidth/innerHeight; cam.updateProjectionMatrix(); }
+addEventListener('resize', resize); resize();
+const q = new URLSearchParams(location.search);
+if (q.get('view')) view(q.get('view'));
+if (q.get('explode')) { ex.value = q.get('explode'); applyEx(); }
+if (q.get('mattress')==='0') mattress.visible=false;
+if (q.get('ui')==='0') document.querySelectorAll('.panel').forEach(e=>e.style.display='none');
+renderer.setAnimationLoop(() => renderer.render(scene, cam));
+window.__ready = true;
+</script>
+</body>
+</html>
