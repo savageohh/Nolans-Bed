@@ -1,0 +1,44 @@
+## Twin
+
+| Section | Item | Qty | Each | Line total |
+|---|---|---:|---:|---:|
+| Lumber | 1x3 x 8 ft | 4 | $4.00–7.00 | $16–$28 |
+| Lumber | 1x3 x 8 ft — spares (~15%) | 1 | $4.00–7.00 | $4–$7 |
+| Lumber | 1x4 x 8 ft | 4 | $5.00–9.00 | $20–$36 |
+| Lumber | 1x4 x 8 ft — spares (~15%) | 1 | $5.00–9.00 | $5–$9 |
+| Lumber | 1x6 x 8 ft | 2 | $8.00–14.00 | $16–$28 |
+| Lumber | 1x6 x 8 ft — spares (~15%) | 1 | $8.00–14.00 | $8–$14 |
+| Lumber | 1x8 x 8 ft | 1 | $10.00–16.00 | $10–$16 |
+| Lumber | 1x8 x 8 ft — spares (~15%) | 1 | $10.00–16.00 | $10–$16 |
+| Lumber | 2x10 x 8 ft | 2 | $11.00–15.00 | $22–$30 |
+| Lumber | 2x10 x 8 ft — spares (~15%) | 1 | $11.00–15.00 | $11–$15 |
+| Lumber | 2x4 x 8 ft | 14 | $3.50–5.00 | $49–$70 |
+| Lumber | 2x4 x 8 ft — spares (~15%) | 3 | $3.50–5.00 | $10–$15 |
+| Lumber | 2x6 x 8 ft | 6 | $5.50–8.00 | $33–$48 |
+| Lumber | 2x6 x 8 ft — spares (~15%) | 1 | $5.50–8.00 | $6–$8 |
+| Lumber | 2x8 x 8 ft | 1 | $8.00–11.00 | $8–$11 |
+| Lumber | 2x8 x 8 ft — spares (~15%) | 1 | $8.00–11.00 | $8–$11 |
+| Sheet goods | 23/32 OSB 4x8 | 1 | $18.00–30.00 | $18–$30 |
+| Inserts & bolts | 3/8-16 inserts (packs of 50) | 1 | $14.00–32.00 | $14–$32 |
+| Inserts & bolts | bolt 3/8-16 x 2-1/4" | 17 | $0.60–1.20 | $10–$20 |
+| Inserts & bolts | bolt 3/8-16 x 3-3/4" | 12 | $1.00–1.80 | $12–$22 |
+| Inserts & bolts | bolt 3/8-16 x 4-1/4" | 6 | $1.20–2.00 | $7–$12 |
+| Inserts & bolts | fender washers 3/8 | 35 | $0.15–0.35 | $5–$12 |
+| Other hardware | felt pads (pack) | 1 | $3.00–6.00 | $3–$6 |
+| Other hardware | anti-tip strap | 1 | $8.00–15.00 | $8–$15 |
+| Consumables | screws 1-1/4 & 2-1/2 (boxes) | 1 | $15.00–25.00 | $15–$25 |
+| Consumables | water-based poly (1 quart, visible parts only) | 1 | $12.00–22.00 | $12–$22 |
+
+| Subtotal | Low | High |
+|---|---:|---:|
+| Lumber | $236 | $362 |
+| Sheet goods | $18 | $30 |
+| Inserts & bolts | $49 | $98 |
+| Other hardware | $11 | $21 |
+| Consumables | $27 | $47 |
+| **Materials before tax** | **$341** | **$558** |
+| Total with MN state only tax (6.875%) | $364 | $597 |
+| Total with Minneapolis (combined) tax (9.025%) | $371 | $609 |
+
+Optional tools & jig stock if you don't own them: **$105–$205** (1/2in upcut spiral bit, 3/4in top-bearing pattern bit, 1/2in roundover bit, 1/4in roundover bit, guide bushing set, insert drive bits, jig stock (1x4s, ply scrap, clamps excluded)).
+

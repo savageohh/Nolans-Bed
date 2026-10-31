@@ -11,9 +11,9 @@
   "deck_top": 54.0,
   "mattress_top": 62.0,
   "cap_top": 68.5,
-  "empty_w": 316.8837186559384,
-  "tip_y": 111.60320748283964,
-  "tip_x": 189.0893722636713,
+  "empty_w": 295.9920542470347,
+  "tip_y": 104.24537676948484,
+  "tip_x": 176.62299587368673,
   "pocket": [
    75.75,
    39.25
@@ -34,7 +34,7 @@
     72.0
    ],
    "rot": null,
-   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "note": "two 2x4 face-glued; felt pad on the foot (shim if the floor is out)",
    "cut": "3 1/2\" x 72\""
   },
   {
@@ -50,7 +50,7 @@
     72.0
    ],
    "rot": null,
-   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "note": "two 2x4 face-glued; felt pad on the foot (shim if the floor is out)",
    "cut": "3 1/2\" x 72\""
   },
   {
@@ -120,17 +120,17 @@
   {
    "name": "End panel (head)",
    "module": "End frame (head)",
-   "stock": "1/2in plywood",
+   "stock": "1x8 pine",
    "box": [
-    2.0,
-    2.5,
+    1.875,
+    2.625,
     3.5,
     44.75,
     62.0,
     68.5
    ],
    "rot": null,
-   "note": "in 1/2in routed grooves, glued",
+   "note": "solid 1x8 pine in 3/4in grooves; glue at centre only, 1/16in gap at groove bottoms for movement",
    "cut": "7 1/4\" x 42\""
   },
   {
@@ -146,7 +146,7 @@
     72.0
    ],
    "rot": null,
-   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "note": "two 2x4 face-glued; felt pad on the foot (shim if the floor is out)",
    "cut": "3 1/2\" x 72\""
   },
   {
@@ -162,7 +162,7 @@
     72.0
    ],
    "rot": null,
-   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "note": "two 2x4 face-glued; felt pad on the foot (shim if the floor is out)",
    "cut": "3 1/2\" x 72\""
   },
   {
@@ -232,17 +232,17 @@
   {
    "name": "End panel (foot)",
    "module": "End frame (foot)",
-   "stock": "1/2in plywood",
+   "stock": "1x8 pine",
    "box": [
-    79.25,
-    79.75,
+    79.125,
+    79.875,
     3.5,
     44.75,
     62.0,
     68.5
    ],
    "rot": null,
-   "note": "in 1/2in routed grooves, glued",
+   "note": "solid 1x8 pine in 3/4in grooves; glue at centre only, 1/16in gap at groove bottoms for movement",
    "cut": "7 1/4\" x 42\""
   },
   {
@@ -294,41 +294,9 @@
    "cut": "5 1/2\" x 81 3/4\""
   },
   {
-   "name": "Back shear panel",
-   "module": "Back panel",
-   "stock": "1/2in plywood",
-   "box": [
-    3.0,
-    78.75,
-    43.25,
-    43.75,
-    10.0,
-    46.75
-   ],
-   "rot": null,
-   "note": "glued+screwed to top cleat; 1/4-20 bolts into stretcher",
-   "cut": "36 3/4\" x 75 5/8\""
-  },
-  {
-   "name": "Back panel top cleat",
-   "module": "Back panel",
-   "stock": "2x2",
-   "box": [
-    3.0,
-    78.75,
-    43.75,
-    45.25,
-    45.25,
-    46.75
-   ],
-   "rot": null,
-   "note": "glued to panel; 1/4-20 bolts up into rail bottom edge",
-   "cut": "1 1/2\" x 75 5/8\""
-  },
-  {
    "name": "Deck ply 1",
    "module": "Deck panel 1",
-   "stock": "3/4in plywood",
+   "stock": "23/32 OSB (or CDX plywood)",
    "box": [
     3.0625,
     40.84375,
@@ -408,7 +376,7 @@
   {
    "name": "Deck ply 2",
    "module": "Deck panel 2",
-   "stock": "3/4in plywood",
+   "stock": "23/32 OSB (or CDX plywood)",
    "box": [
     40.90625,
     78.6875,
@@ -495,11 +463,11 @@
     45.25,
     46.75,
     47.0,
-    67.0
+    67.75
    ],
    "rot": null,
-   "note": "half-lapped to bottom rail; stub tenon into cap groove",
-   "cut": "3 1/2\" x 20 1/2\""
+   "note": "bolted to post/rail; pine rails glued+screwed to its inner face",
+   "cut": "3 1/2\" x 20 3/4\""
   },
   {
    "name": "Guard stile back 2",
@@ -511,11 +479,11 @@
     45.25,
     46.75,
     47.0,
-    67.0
+    67.75
    ],
    "rot": null,
-   "note": "half-lapped to bottom rail; stub tenon into cap groove",
-   "cut": "3 1/2\" x 20 1/2\""
+   "note": "bolted to post/rail; pine rails glued+screwed to its inner face",
+   "cut": "3 1/2\" x 20 3/4\""
   },
   {
    "name": "Guard stile back 3",
@@ -527,267 +495,305 @@
     45.25,
     46.75,
     47.0,
-    67.0
+    67.75
    ],
    "rot": null,
-   "note": "half-lapped to bottom rail; stub tenon into cap groove",
-   "cut": "3 1/2\" x 20 1/2\""
+   "note": "bolted to post/rail; pine rails glued+screwed to its inner face",
+   "cut": "3 1/2\" x 20 3/4\""
   },
   {
    "name": "Guard bottom rail (back)",
    "module": "Guard (back)",
-   "stock": "2x4",
+   "stock": "1x4 pine",
    "box": [
     3.0,
     78.75,
+    44.5,
     45.25,
-    46.75,
-    55.0,
-    58.5
+    56.0,
+    59.5
    ],
    "rot": null,
-   "note": "1/2in groove in top edge for spindles",
+   "note": "pine; rests on the long rail's top edge",
+   "cut": "3 1/2\" x 75 3/4\""
+  },
+  {
+   "name": "Guard top rail (back)",
+   "module": "Guard (back)",
+   "stock": "1x4 pine",
+   "box": [
+    3.0,
+    78.75,
+    44.5,
+    45.25,
+    64.25,
+    67.75
+   ],
+   "rot": null,
+   "note": "pine",
    "cut": "3 1/2\" x 75 3/4\""
   },
   {
    "name": "Guard cap (back)",
    "module": "Guard (back)",
-   "stock": "2x4",
+   "stock": "1x6 pine",
    "box": [
     3.0,
     78.75,
-    44.25,
-    47.75,
-    67.0,
+    42.5,
+    48.0,
+    67.75,
     68.5
    ],
    "rot": null,
-   "note": "laid flat; 1/2in groove underside; 1/2in roundover",
-   "cut": "3 1/2\" x 75 3/4\""
+   "note": "pine, flat; glued+screwed to stiles and top rail; 1/2in roundover",
+   "cut": "5 1/2\" x 75 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    9.458333333333334,
-    10.958333333333334,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    5.716666666666667,
+    8.216666666666667,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.96in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    13.916666666666668,
-    15.416666666666668,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    10.933333333333334,
+    13.433333333333334,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.96in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    18.375,
-    19.875,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    16.15,
+    18.65,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.96in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    22.833333333333336,
-    24.333333333333336,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    21.366666666666667,
+    23.866666666666667,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.96in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    27.29166666666667,
-    28.79166666666667,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    26.583333333333336,
+    29.083333333333336,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.96in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    31.750000000000007,
-    33.25000000000001,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    31.800000000000004,
+    34.300000000000004,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.96in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    36.208333333333336,
-    37.708333333333336,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    37.016666666666666,
+    39.516666666666666,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.96in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    40.66666666666667,
-    42.16666666666667,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    42.233333333333334,
+    44.733333333333334,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.96in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    51.142857142857146,
-    52.642857142857146,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    47.45,
+    49.95,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.52in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    55.16071428571429,
-    56.66071428571429,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    52.66666666666667,
+    55.16666666666667,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.52in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    59.17857142857143,
-    60.67857142857143,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    57.88333333333334,
+    60.38333333333334,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.52in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    63.19642857142857,
-    64.69642857142857,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    63.1,
+    65.6,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.52in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    67.21428571428572,
-    68.71428571428572,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    68.31666666666666,
+    70.81666666666666,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.52in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle back",
+   "name": "Guard slat back",
    "module": "Guard (back)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    71.23214285714286,
-    72.73214285714286,
-    45.25,
-    46.75,
-    58.5,
-    67.0
+    73.53333333333333,
+    76.03333333333333,
+    43.75,
+    44.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.52in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.72in",
+   "cut": "2 1/2\" x 11 3/4\""
+  },
+  {
+   "name": "Back diagonal brace",
+   "module": "Back brace",
+   "stock": "2x4",
+   "box": null,
+   "rot": {
+    "center": [
+     35.75,
+     46.0,
+     31.0
+    ],
+    "size": [
+     71.6065341945984,
+     1.5,
+     3.5
+    ],
+    "angle": -32.40667004389689,
+    "axis": "y"
+   },
+   "note": "32 deg; 2 bolts each end into stretcher/rail outer faces",
+   "cut": "3 1/2\" x 71 5/8\""
   },
   {
    "name": "Guard stile front 1",
@@ -799,11 +805,11 @@
     1.5,
     3.0,
     47.0,
-    67.0
+    67.75
    ],
    "rot": null,
-   "note": "half-lapped to bottom rail; stub tenon into cap groove",
-   "cut": "3 1/2\" x 20 1/2\""
+   "note": "bolted to post/rail; pine rails glued+screwed to its inner face",
+   "cut": "3 1/2\" x 20 3/4\""
   },
   {
    "name": "Guard stile front 2",
@@ -815,219 +821,235 @@
     1.5,
     3.0,
     47.0,
-    67.0
+    67.75
    ],
    "rot": null,
-   "note": "half-lapped to bottom rail; stub tenon into cap groove",
-   "cut": "3 1/2\" x 20 1/2\""
+   "note": "bolted to post/rail; pine rails glued+screwed to its inner face",
+   "cut": "3 1/2\" x 20 3/4\""
   },
   {
    "name": "Guard bottom rail (front)",
    "module": "Guard (front)",
-   "stock": "2x4",
+   "stock": "1x4 pine",
    "box": [
     3.0,
     61.25,
-    1.5,
     3.0,
-    55.0,
-    58.5
+    3.75,
+    56.0,
+    59.5
    ],
    "rot": null,
-   "note": "1/2in groove in top edge for spindles",
+   "note": "pine; rests on the long rail's top edge",
+   "cut": "3 1/2\" x 58 1/4\""
+  },
+  {
+   "name": "Guard top rail (front)",
+   "module": "Guard (front)",
+   "stock": "1x4 pine",
+   "box": [
+    3.0,
+    61.25,
+    3.0,
+    3.75,
+    64.25,
+    67.75
+   ],
+   "rot": null,
+   "note": "pine",
    "cut": "3 1/2\" x 58 1/4\""
   },
   {
    "name": "Guard cap (front)",
    "module": "Guard (front)",
-   "stock": "2x4",
+   "stock": "1x6 pine",
    "box": [
     3.0,
     61.25,
-    0.5,
-    4.0,
-    67.0,
+    0.25,
+    5.75,
+    67.75,
     68.5
    ],
    "rot": null,
-   "note": "laid flat; 1/2in groove underside; 1/2in roundover",
-   "cut": "3 1/2\" x 58 1/4\""
+   "note": "pine, flat; glued+screwed to stiles and top rail; 1/2in roundover",
+   "cut": "5 1/2\" x 58 1/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    9.395833333333334,
-    10.895833333333334,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    5.795454545454545,
+    8.295454545454545,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    13.791666666666668,
-    15.291666666666668,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    11.09090909090909,
+    13.59090909090909,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    18.1875,
-    19.6875,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    16.386363636363633,
+    18.886363636363633,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    22.583333333333336,
-    24.083333333333336,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    21.68181818181818,
+    24.18181818181818,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    26.97916666666667,
-    28.47916666666667,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    26.977272727272727,
+    29.477272727272727,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    31.375000000000007,
-    32.87500000000001,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    32.27272727272727,
+    34.77272727272727,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    35.770833333333336,
-    37.270833333333336,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    37.56818181818181,
+    40.06818181818181,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    40.16666666666667,
-    41.66666666666667,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    42.86363636363636,
+    45.36363636363636,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    44.56250000000001,
-    46.06250000000001,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    48.15909090909091,
+    50.65909090909091,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    48.95833333333334,
-    50.45833333333334,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    53.45454545454545,
+    55.95454545454545,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
-   "name": "Spindle front",
+   "name": "Guard slat front",
    "module": "Guard (front)",
-   "stock": "2x2",
+   "stock": "1x3 pine",
    "box": [
-    53.35416666666668,
-    54.85416666666668,
-    1.5,
-    3.0,
-    58.5,
-    67.0
+    58.75,
+    61.25,
+    3.75,
+    4.5,
+    56.0,
+    67.75
    ],
    "rot": null,
-   "note": "1/2in stub tenons both ends; clear gap 2.90in",
-   "cut": "1 1/2\" x 9 1/2\""
+   "note": "pine; glued+screwed over both rails; clear gap 2.80in",
+   "cut": "2 1/2\" x 11 3/4\""
   },
   {
    "name": "Ladder stile 1",
@@ -1170,7 +1192,7 @@
   {
    "name": "Ladder hook lip",
    "module": "Ladder",
-   "stock": "1x4 (rip to width)",
+   "stock": "1x4 pine",
    "box": [
     61.5,
     78.5,

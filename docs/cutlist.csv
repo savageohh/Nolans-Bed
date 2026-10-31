@@ -1,25 +1,26 @@
 module,part,stock,qty,width_in,length_in,notes
-Back panel,Back panel top cleat,2x2,1,1.500,75.625,glued to panel; 1/4-20 bolts up into rail bottom edge
-Back panel,Back shear panel,1/2in plywood,1,36.750,75.625,glued+screwed to top cleat; 1/4-20 bolts into stretcher
+Back brace,Back diagonal brace,2x4,1,3.500,71.607,32 deg; 2 bolts each end into stretcher/rail outer faces
 Back stretcher,Back stretcher,2x6,1,5.500,81.750,in 1/2in housings; 2 bolts each end through post
-Deck panel,Deck ply,3/4in plywood,2,39.125,37.781,vent holes/slots; glued+screwed to ribs
+Deck panel,Deck ply,23/32 OSB (or CDX plywood),2,39.125,37.781,vent holes/slots; glued+screwed to ribs
 Deck panel,Deck rib,2x4,8,3.500,40.125,ends drop into open-top stopped dados in rails
 End frame,End apron,2x8,2,7.250,43.750,"1/2in tenons both ends, glued"
 End frame,End lower stretcher,2x6,2,5.500,43.750,"1/2in tenons both ends, glued"
 End frame,End mid rail,2x6,2,5.500,43.750,"1/2in tenons both ends, glued"
-End frame,End panel,1/2in plywood,2,7.250,42.000,"in 1/2in routed grooves, glued"
+End frame,End panel,1x8 pine,2,7.250,42.000,"solid 1x8 pine in 3/4in grooves; glue at centre only, 1/16in gap at groove bottoms for movement"
 End frame,End top rail,2x4,2,3.500,43.750,"1/2in tenons both ends, glued"
-End frame,Post,2x4 (laminate pairs),8,3.500,72.000,two 2x4 face-glued; 3/8-16 insert in foot for leveling glide
-Guard,Guard bottom rail,2x4,1,3.500,58.250,1/2in groove in top edge for spindles
-Guard,Guard bottom rail,2x4,1,3.500,75.750,1/2in groove in top edge for spindles
-Guard,Guard cap,2x4,1,3.500,58.250,laid flat; 1/2in groove underside; 1/2in roundover
-Guard,Guard cap,2x4,1,3.500,75.750,laid flat; 1/2in groove underside; 1/2in roundover
-Guard,Guard stile back,2x4,3,3.500,20.500,half-lapped to bottom rail; stub tenon into cap groove
-Guard,Guard stile front,2x4,2,3.500,20.500,half-lapped to bottom rail; stub tenon into cap groove
-Guard,Spindle back,2x2,14,1.500,9.500,1/2in stub tenons both ends; clear gap 2.52in
-Guard,Spindle front,2x2,11,1.500,9.500,1/2in stub tenons both ends; clear gap 2.90in
+End frame,Post,2x4 (laminate pairs),8,3.500,72.000,two 2x4 face-glued; felt pad on the foot (shim if the floor is out)
+Guard,Guard bottom rail,1x4 pine,1,3.500,58.250,pine; rests on the long rail's top edge
+Guard,Guard bottom rail,1x4 pine,1,3.500,75.750,pine; rests on the long rail's top edge
+Guard,Guard cap,1x6 pine,1,5.500,58.250,"pine, flat; glued+screwed to stiles and top rail; 1/2in roundover"
+Guard,Guard cap,1x6 pine,1,5.500,75.750,"pine, flat; glued+screwed to stiles and top rail; 1/2in roundover"
+Guard,Guard slat back,1x3 pine,14,2.500,11.750,pine; glued+screwed over both rails; clear gap 2.72in
+Guard,Guard slat front,1x3 pine,11,2.500,11.750,pine; glued+screwed over both rails; clear gap 2.80in
+Guard,Guard stile back,2x4,3,3.500,20.750,bolted to post/rail; pine rails glued+screwed to its inner face
+Guard,Guard stile front,2x4,2,3.500,20.750,bolted to post/rail; pine rails glued+screwed to its inner face
+Guard,Guard top rail,1x4 pine,1,3.500,58.250,pine
+Guard,Guard top rail,1x4 pine,1,3.500,75.750,pine
 Ladder,Ladder header,2x4,1,3.500,17.000,let into stile notches; bolts to rail face
-Ladder,Ladder hook lip,1x4 (rip to width),1,2.750,17.000,glued/screwed to header top; hooks over rail
+Ladder,Ladder hook lip,1x4 pine,1,2.750,17.000,glued/screwed to header top; hooks over rail
 Ladder,Ladder stile,2x6,2,5.500,61.596,70 deg; housed tread dados; notch for header
 Ladder,Ladder tread,2x6,5,5.500,15.000,"2x6 flat, housed 1/2in each end, glued + 2 screws"
 Long rail,Long rail,2x10,2,9.250,81.750,sits in 1/2in housings; 2 bolts each end through post
