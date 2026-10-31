@@ -37,7 +37,7 @@ python3 model/bed.py          >/dev/null   # twin last, so viewer/cut list are t
   echo "edit \`PRICES\` at the top of \`model/bed.py\`. Spares are the ~15% extra boards the cut list"
   echo "recommends. Tax is Minnesota: 6.875% state, and 9.025% combined in Minneapolis. Your rate depends"
   echo "on the store's city and county, so check the MN Dept. of Revenue rate guide. The Menards 11% rebate"
-  echo "comes back as store credit, so it isn't subtracted here (it's worth roughly \$45–70)._"
+  echo "comes back as store credit, so it isn't subtracted here (it's worth roughly \$35–60)._"
   echo
   cat build/cost_twin.md
   echo
@@ -47,6 +47,9 @@ python3 model/bed.py          >/dev/null   # twin last, so viewer/cut list are t
   echo
   echo "- Buy lumber during a Menards 11% rebate week, or in the lumber sales flyer."
   echo "- Use a zinc 50-pack of 3/8-16 inserts instead of E-Z Hex 25-packs. Do the pull test from DESIGN.md first."
-  echo "- Use sanded pine ply instead of birch for the deck. It sits under a mattress where nobody sees it."
+  echo "- Buy the spare boards, then return the ones you don't use (keep the receipt). That's about \$50–80."
+  echo "- Already applied: OSB deck, 1x8 pine end panels, a diagonal brace instead of a back panel,"
+  echo "  one insert size, felt pads instead of glides, and finish only on visible parts. Glue and"
+  echo "  sandpaper are assumed on hand."
   echo "- Buy bolts by the box instead of from the bin. Box pricing often runs half the per-piece bin price."
 } > docs/COST.md

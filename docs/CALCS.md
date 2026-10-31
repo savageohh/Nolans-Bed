@@ -10,41 +10,42 @@ the deck. "Use" is demand/capacity: under 100% passes._
 - Overall: **81 3/4" L x 48 1/4" W x 72" H**; mattress pocket 75 3/4" x 39 1/4"
 - Deck top 54", mattress top 62", guard cap 68 1/2" (**6.5in above an 8in mattress**; standard minimum is 5in)
 - Lounge headroom: 46 3/4" under the rails, 49 3/4" under the deck ribs
-- Empty weight ≈ **315 lb** (without mattress)
+- Empty weight ≈ **296 lb** (without mattress)
 - Geometry collision check: **PASS** — no unintended overlaps
 
 | Check | Demand | Capacity | Unit | Use | Basis |
 |---|---:|---:|---|---:|---|
-| Long rail bending (600 lb point at midspan, net section at a dado) | 788.18 | 962.50 | psi | 82% | 2x10 SPF#2, span 78.8in, Fb x CF |
-| Long rail shear | 46.09 | 135.00 | psi | 34% | net area at end |
+| Long rail bending (600 lb point at midspan, net section at a dado) | 789.57 | 962.50 | psi | 82% | 2x10 SPF#2, span 78.8in, Fb x CF |
+| Long rail shear | 46.25 | 135.00 | psi | 34% | net area at end |
 | Long rail deflection (300 lb static point) | 0.03 | 0.22 | in | 13% | limit L/360 |
-| Rail bearing on post housing shoulder | 220.22 | 425.00 | psi | 52% | Fc-perp of rail; bolts ignored |
+| Rail bearing on post housing shoulder | 220.96 | 425.00 | psi | 52% | Fc-perp of rail; bolts ignored |
 | Deck rib bending (60% of 600 lb on one rib) | 1,161.07 | 1,509.37 | psi | 77% | 2x4 on edge, span 39.8in, plywood composite action ignored |
 | Rib end bearing in rail dado | 238.54 | 425.00 | psi | 56% | 1/2 x 1-1/2 bearing |
-| Post compression (everything on one post) | 91.89 | 834.80 | psi | 11% | unbraced 72in, Cp=0.66 |
+| Post compression (everything on one post) | 90.09 | 834.80 | psi | 11% | unbraced 72in, Cp=0.66 |
 | Guard cap bending (200 lb outward, longest bay) | 677.69 | 747.50 | psi | 91% | flat 1x6 pine bending about its 5.5in width, bay 51.2in, top rail/slats ignored |
 | Ladder-side guard stile: insert withdrawal | 203.70 | 300.00 | lb | 68% | allowable 300 lb per 3/8-16 insert in SPF face grain (verify with a pull test) |
 | Ladder tread bending (600 lb mid-tread) | 1,054.55 | 1,308.12 | psi | 81% | 2x6 flat |
 | Sway, side-to-side (150 lb push at deck) | 0.01 | 0.12 | in | 9% | 4 posts, 30.2in free, joints at 50% fixity |
 | Post bending from that push | 92.60 | 1,312.50 | psi | 7% |  |
-| Sway, lengthwise: shear-panel bolts (150 lb) | 25.00 | 150.00 | lb/bolt | 17% | 6 bolts top row, 150 lb each allowable (conservative) |
+| Back brace bolts, lengthwise push (150 lb) | 88.83 | 150.00 | lb/bolt | 59% | brace force 178 lb over 2 bolts per end, 150 lb each allowable (conservative) |
+| Back brace buckling (in compression) | 33.84 | 304.47 | psi | 11% | 2x4, 68in between bolt groups, weak axis, Cp=0.24 |
 
-Tipping (empty bed, someone pulling sideways on the guard cap): ≈ **111 lb** side-to-side, ≈ 188 lb end-to-end. With a kid on the deck the bed gets more stable, not less, but a furniture anti-tip strap to a wall stud is cheap insurance (it carries no structural load).
+Tipping (empty bed, someone pulling sideways on the guard cap): ≈ **104 lb** side-to-side, ≈ 177 lb end-to-end. With a kid on the deck the bed gets more stable, not less, but a furniture anti-tip strap to a wall stud is cheap insurance (it carries no structural load).
 
 
 ### Modules (for transport)
 
 | Module | Parts | Weight | Size L x W x H |
 |---|---:|---:|---|
-| End frame (head) | 7 | 50 lb | 3" x 48 1/4" x 72" |
-| End frame (foot) | 7 | 50 lb | 3" x 48 1/4" x 72" |
+| End frame (head) | 7 | 51 lb | 3" x 48 1/4" x 72" |
+| End frame (foot) | 7 | 51 lb | 3" x 48 1/4" x 72" |
 | Long rail (front) | 1 | 18 lb | 81 3/4" x 1 1/2" x 9 1/4" |
 | Long rail (back) | 1 | 18 lb | 81 3/4" x 1 1/2" x 9 1/4" |
 | Back stretcher | 1 | 11 lb | 81 3/4" x 1 1/2" x 5 1/2" |
-| Back panel | 2 | 31 lb | 75 3/4" x 2" x 36 3/4" |
-| Deck panel 1 | 5 | 36 lb | 37 3/4" x 40 1/8" x 4 1/4" |
-| Deck panel 2 | 5 | 36 lb | 37 3/4" x 40 1/8" x 4 1/4" |
+| Deck panel 1 | 5 | 38 lb | 37 3/4" x 40 1/8" x 4 1/4" |
+| Deck panel 2 | 5 | 38 lb | 37 3/4" x 40 1/8" x 4 1/4" |
 | Guard (back) | 20 | 22 lb | 75 3/4" x 5 1/2" x 21 1/2" |
+| Back brace | 1 | 6 lb | 62 5/16" x 1 1/2" x 41 5/16" |
 | Guard (front) | 16 | 16 lb | 58 1/4" x 5 1/2" x 21 1/2" |
 | Ladder | 9 | 28 lb | 17" x 26 13/16" x 57 7/8" |
 
@@ -53,26 +54,27 @@ Tipping (empty bed, someone pulling sideways on the guard cap): ≈ **111 lb** s
 - Overall: **81 3/4" L x 64 1/4" W x 72" H**; mattress pocket 75 3/4" x 55 1/4"
 - Deck top 54", mattress top 62", guard cap 68 1/2" (**6.5in above an 8in mattress**; standard minimum is 5in)
 - Lounge headroom: 46 3/4" under the rails, 49 3/4" under the deck ribs
-- Empty weight ≈ **372 lb** (without mattress)
+- Empty weight ≈ **356 lb** (without mattress)
 - Geometry collision check: **PASS** — no unintended overlaps
 
 | Check | Demand | Capacity | Unit | Use | Basis |
 |---|---:|---:|---|---:|---|
-| Long rail bending (600 lb point at midspan, net section at a dado) | 800.16 | 962.50 | psi | 83% | 2x10 SPF#2, span 78.8in, Fb x CF |
-| Long rail shear | 47.43 | 135.00 | psi | 35% | net area at end |
+| Long rail bending (600 lb point at midspan, net section at a dado) | 802.11 | 962.50 | psi | 83% | 2x10 SPF#2, span 78.8in, Fb x CF |
+| Long rail shear | 47.65 | 135.00 | psi | 35% | net area at end |
 | Long rail deflection (300 lb static point) | 0.03 | 0.22 | in | 13% | limit L/360 |
-| Rail bearing on post housing shoulder | 226.60 | 425.00 | psi | 53% | Fc-perp of rail; bolts ignored |
+| Rail bearing on post housing shoulder | 227.65 | 425.00 | psi | 54% | Fc-perp of rail; bolts ignored |
 | Deck rib bending (45% of 600 lb on one rib) | 1,221.31 | 1,509.37 | psi | 81% | 2x4 on edge, span 55.8in, plywood composite action ignored |
 | Rib end bearing in rail dado | 178.91 | 425.00 | psi | 42% | 1/2 x 1-1/2 bearing |
-| Post compression (everything on one post) | 97.35 | 834.80 | psi | 12% | unbraced 72in, Cp=0.66 |
+| Post compression (everything on one post) | 95.77 | 834.80 | psi | 11% | unbraced 72in, Cp=0.66 |
 | Guard cap bending (200 lb outward, longest bay) | 677.69 | 747.50 | psi | 91% | flat 1x6 pine bending about its 5.5in width, bay 51.2in, top rail/slats ignored |
 | Ladder-side guard stile: insert withdrawal | 203.70 | 300.00 | lb | 68% | allowable 300 lb per 3/8-16 insert in SPF face grain (verify with a pull test) |
 | Ladder tread bending (600 lb mid-tread) | 1,054.55 | 1,308.12 | psi | 81% | 2x6 flat |
 | Sway, side-to-side (150 lb push at deck) | 0.01 | 0.12 | in | 9% | 4 posts, 30.2in free, joints at 50% fixity |
 | Post bending from that push | 92.60 | 1,312.50 | psi | 7% |  |
-| Sway, lengthwise: shear-panel bolts (150 lb) | 25.00 | 150.00 | lb/bolt | 17% | 6 bolts top row, 150 lb each allowable (conservative) |
+| Back brace bolts, lengthwise push (150 lb) | 88.72 | 150.00 | lb/bolt | 59% | brace force 177 lb over 2 bolts per end, 150 lb each allowable (conservative) |
+| Back brace buckling (in compression) | 33.80 | 302.72 | psi | 11% | 2x4, 68in between bolt groups, weak axis, Cp=0.24 |
 
-Tipping (empty bed, someone pulling sideways on the guard cap): ≈ **175 lb** side-to-side, ≈ 222 lb end-to-end. With a kid on the deck the bed gets more stable, not less, but a furniture anti-tip strap to a wall stud is cheap insurance (it carries no structural load).
+Tipping (empty bed, someone pulling sideways on the guard cap): ≈ **167 lb** side-to-side, ≈ 212 lb end-to-end. With a kid on the deck the bed gets more stable, not less, but a furniture anti-tip strap to a wall stud is cheap insurance (it carries no structural load).
 
 
 ### Modules (for transport)
@@ -84,10 +86,10 @@ Tipping (empty bed, someone pulling sideways on the guard cap): ≈ **175 lb** s
 | Long rail (front) | 1 | 18 lb | 81 3/4" x 1 1/2" x 9 1/4" |
 | Long rail (back) | 1 | 18 lb | 81 3/4" x 1 1/2" x 9 1/4" |
 | Back stretcher | 1 | 11 lb | 81 3/4" x 1 1/2" x 5 1/2" |
-| Back panel | 2 | 31 lb | 75 3/4" x 2" x 36 3/4" |
-| Deck panel 1 | 6 | 55 lb | 37 3/4" x 56 1/8" x 4 1/4" |
-| Deck panel 2 | 6 | 55 lb | 37 3/4" x 56 1/8" x 4 1/4" |
+| Deck panel 1 | 6 | 58 lb | 37 3/4" x 56 1/8" x 4 1/4" |
+| Deck panel 2 | 6 | 58 lb | 37 3/4" x 56 1/8" x 4 1/4" |
 | Guard (back) | 20 | 22 lb | 75 3/4" x 5 1/2" x 21 1/2" |
+| Back brace | 1 | 6 lb | 62 9/16" x 1 1/2" x 41 5/16" |
 | Guard (front) | 16 | 16 lb | 58 1/4" x 5 1/2" x 21 1/2" |
 | Ladder | 9 | 28 lb | 17" x 26 13/16" x 57 7/8" |
 

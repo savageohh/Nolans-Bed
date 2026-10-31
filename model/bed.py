@@ -53,24 +53,22 @@ PRICES = {
     "2x10": (11.00, 15.00),
     # pine boards, 8 ft, #2 common (select/clear runs ~2x)
     "1x3": (4.00, 7.00), "1x4": (5.00, 9.00), "1x6": (8.00, 14.00),
-    # plywood, 4x8 sheet
-    "ply34": (55.00, 75.00),     # 3/4in sanded pine/birch (Baltic birch ~$70)
-    "ply12": (40.00, 55.00),     # 1/2in BC sanded
+    "1x8": (10.00, 16.00),
+    # sheet, 4x8
+    "ply34": (18.00, 30.00),     # 23/32 OSB under the mattress (CDX ply ~$35-45 if you prefer)
     # hardware
     "insert 3/8-16 (pack of 50)": (14.00, 32.00),   # zinc knife-thread 50pk .. 2x25pk E-Z Hex softwood
-    "insert 1/4-20 (pack of 25)": (8.00, 16.00),
     '3/8-16 x 3-3/4"': (1.00, 1.80), '3/8-16 x 4-1/4"': (1.20, 2.00), '3/8-16 x 2-1/4"': (0.60, 1.20),
-    '1/4-20 x 1"': (0.20, 0.40), '1/4-20 x 2"': (0.25, 0.50),
-    "fender washer 3/8": (0.15, 0.35), "fender washer 1/4": (0.10, 0.20),
-    "leveling glide 3/8-16 (4 pack)": (8.00, 15.00), "anti-tip strap": (8.00, 15.00),
-    # consumables
-    "wood glue (quart)": (10.00, 20.00), "screws 1-1/4 & 2-1/2 (boxes)": (15.00, 25.00),
-    "water-based poly (2 quarts)": (25.00, 45.00), "sandpaper assortment": (15.00, 25.00),
+    "fender washer 3/8": (0.15, 0.35),
+    "felt pads (pack)": (3.00, 6.00), "anti-tip strap": (8.00, 15.00),
+    # consumables (glue and sandpaper assumed on hand)
+    "screws 1-1/4 & 2-1/2 (boxes)": (15.00, 25.00),
+    "water-based poly (1 quart, visible parts only)": (12.00, 22.00),
 }
 TOOLS = {   # optional, only if you don't already have them
     "1/2in upcut spiral bit": (20.00, 40.00), "3/4in top-bearing pattern bit": (20.00, 35.00),
     "1/2in roundover bit": (15.00, 30.00), "1/4in roundover bit": (12.00, 25.00),
-    "slot cutter (panel grooves)": (25.00, 45.00), "guide bushing set": (20.00, 35.00),
+"guide bushing set": (20.00, 35.00),
     "insert drive bits": (8.00, 15.00), "jig stock (1x4s, ply scrap, clamps excluded)": (10.00, 25.00),
 }
 SPARE_LUMBER = 0.15            # extra boards for defects/mistakes
@@ -132,7 +130,7 @@ for end, x0 in (("head", 0.0), ("foot", LO - PX)):
     mod = f"End frame ({end})"
     for side, y0 in (("front", 0.0), ("back", WO - PY)):
         part(f"Post {end}-{side}", mod, "post", (x0, x0 + PX, y0, y0 + PY, 0, POST_H),
-             note="two 2x4 face-glued; 3/8-16 insert in foot for leveling glide")
+             note="two 2x4 face-glued; felt pad on the foot (shim if the floor is out)")
     # end-frame members, flush with the posts' inner x-face, M&T into posts
     xi0, xi1 = (PX - T, PX) if end == "head" else (LO - PX, LO - PX + T)
     for nm, (stk, z0) in EF.items():
@@ -141,9 +139,10 @@ for end, x0 in (("head", 0.0), ("foot", LO - PX)):
     pz0 = EF["mid rail"][1] + W2["2x6"]
     pz1 = EF["top rail"][1]
     xm = (xi0 + xi1) / 2
-    part(f"End panel ({end})", mod, "ply12", (xm - 0.25, xm + 0.25, PY, WO - PY, pz0, pz1),
-         cut=(WO - 2 * PY + 0.75, pz1 - pz0 + 0.75), note="in 1/2in routed grooves, glued")
-ins("3/8-16", "post feet (leveling glides)", 4)
+    assert abs((pz1 - pz0 + 0.75) - 7.25) < 1e-6, "end panel should be exactly one 1x8 wide"
+    part(f"End panel ({end})", mod, "1x8", (xm - PINE / 2, xm + PINE / 2, PY, WO - PY, pz0, pz1),
+         cut=(WO - 2 * PY + 0.75, pz1 - pz0 + 0.75),
+         note="solid 1x8 pine in 3/4in grooves; glue at centre only, 1/16in gap at groove bottoms for movement")
 
 # ------------------------------------------------------------ long members
 for side, (y0, y1), posts in (("front", (YF0, YF1), ("front",)), ("back", (YB0, YB1), ("back",))):
@@ -156,16 +155,11 @@ part("Back stretcher", "Back stretcher", "2x6", (0, LO, YB0, YB1, BACK_STRETCHER
 ins("3/8-16", "back stretcher inner end faces (stretcher-to-post bolts)", 4)
 bolt('3/8-16 x 3-3/4"', 4)
 
-# back shear panel + top cleat
-part("Back shear panel", "Back panel", "ply12",
-     (PX, LO - PX, YB0 - 0.5, YB0, BACK_STRETCHER_Z, RAIL_BOT),
-     cut=(LO - 2 * PX - 0.125, RAIL_BOT - BACK_STRETCHER_Z), note="glued+screwed to top cleat; 1/4-20 bolts into stretcher")
-part("Back panel top cleat", "Back panel", "2x2", (PX, LO - PX, YB0, YB0 + T, RAIL_BOT - T, RAIL_BOT),
-     extra=-0.125, note="glued to panel; 1/4-20 bolts up into rail bottom edge")
-ins("1/4-20", "back stretcher inner face (panel bolts)", 6)
-ins("1/4-20", "back rail bottom edge (panel cleat bolts)", 6)
-bolt('1/4-20 x 1"', 6)
-bolt('1/4-20 x 2"', 6)
+# back diagonal brace: one 2x4 lapped on the outer faces of the back stretcher and back rail.
+# It is the bed's only end-to-end racking resistance -- don't leave it off.
+BRACE_W = 3.5
+brace_bot = (PX + 4.0, BACK_STRETCHER_Z + 2.75)
+BRACE_TOP_Z = RAIL_BOT + 2.5
 
 # ------------------------------------------------------------------- deck
 plen = (LIN - 3 * 0.0625) / 2
@@ -212,10 +206,45 @@ def guard(side, plane, x0, x1, stile_xs, flush_end=False):
              note=f"pine; glued+screwed over both rails; clear gap {gap:.2f}in")
     return gap
 
+def _brace():
+    bx, bz = brace_bot
+    zt = BRACE_TOP_Z
+    def geom(xt):
+        L = math.hypot(xt - bx, zt - bz)
+        u = ((xt - bx) / L, (zt - bz) / L)
+        n = (-u[1], u[0])
+        bolts_xz = [(ex + k * n[0], ez + k * n[1]) for ex, ez in ((bx, bz), (xt, zt)) for k in (-1.0, 1.0)]
+        corners = lambda ex, ez, sgn: [(ex + sgn * a * u[0] + b * n[0], ez + sgn * a * u[1] + b * n[1])
+                                       for a in (BRACE_W / 2,) for b in (-BRACE_W / 2, BRACE_W / 2)] + \
+                                      [(ex + b * n[0], ez + b * n[1]) for b in (-BRACE_W / 2, BRACE_W / 2)]
+        return L, u, bolts_xz, corners(bx, bz, -1), corners(xt, zt, 1)
+    def ok(xt):
+        L, u, bxz, cb, ct = geom(xt)
+        top_bolts = bxz[2:]
+        clear = all(z < RIB_BOT - 0.35 or all(abs(x - (rx + T / 2)) > T / 2 + 0.95 for rx in rib_x) for x, z in top_bolts)
+        on_str = all(BACK_STRETCHER_Z < z < BACK_STRETCHER_Z + 5.5 and x > PX for x, z in cb)
+        on_rail = all(RAIL_BOT < z < RAIL_TOP for x, z in ct)
+        clear_stile = all(x < LO - PX - 3.5 - 0.25 for x, z in ct)
+        return clear and on_str and on_rail and clear_stile
+    xt = next(x for x in [LO - PX - 14.0 - 0.25 * i for i in range(40)] if ok(x))
+    L, u, bxz, cb, ct = geom(xt)
+    th = math.atan2(u[1], u[0])
+    cx, cz = (bx + xt) / 2, (bz + zt) / 2
+    part("Back diagonal brace", "Back brace", "2x4",
+         rot=dict(center=(cx, YB1 + T / 2, cz), size=(L + BRACE_W, T, BRACE_W), angle=-math.degrees(th), axis="y"),
+         note=f"{math.degrees(th):.0f} deg; 2 bolts each end into stretcher/rail outer faces")
+    # guard stiles start at STILE_BOT; make sure the brace passes under the back centre stile
+    zc = bz + (mid + 1.75 - bx) * math.tan(th) + BRACE_W / 2 / math.cos(th)
+    assert zc < STILE_BOT, ("brace hits centre guard stile", zc)
+    return L, th, xt
+
 # centre stile sits 6in off centre so its rail inserts miss the two rib dados at the deck-panel seam
 mid = LO / 2 + 6.0
 assert all(abs(mid - (rx + T / 2)) > 1.75 + T / 2 + 0.75 for rx in rib_x), "centre stile over a rib dado"
 guard("back", GB, PX, LO - PX, [PX, mid - 1.75, LO - PX - 3.5])
+BRACE_L, BRACE_TH, BRACE_XT = _brace()
+ins("3/8-16", "back stretcher + back rail outer faces (diagonal brace)", 4)
+bolt('3/8-16 x 2-1/4"', 4)
 ins("3/8-16", "post inner x-faces (back guard stiles)", 4)
 ins("3/8-16", "back rail outer face (back guard stiles)", 6)
 bolt('3/8-16 x 4-1/4"', 4)
@@ -272,7 +301,7 @@ for i, a in enumerate(boxed):
 def dims(p):
     """(thickness, width, cut length) for the cut list."""
     if p["rot"]:
-        s = p["rot"]["size"]
+        s = sorted(p["rot"]["size"])
         return (s[0], s[1], s[2] + p["extra"])
     if p["cut"]:
         return (None, p["cut"][1], p["cut"][0])
@@ -284,9 +313,9 @@ STOCK = {
     "post": ("2x4 (laminate pairs)", 1.5, 3.5),
     "2x2": ("2x2", 1.5, 1.5), "2x4": ("2x4", 1.5, 3.5), "2x6": ("2x6", 1.5, 5.5),
     "2x8": ("2x8", 1.5, 7.25), "2x10": ("2x10", 1.5, 9.25), "1x3": ("1x3 pine", 0.75, 2.5), "1x4": ("1x4 pine", 0.75, 3.5), "1x6": ("1x6 pine", 0.75, 5.5),
-    "ply12": ("1/2in plywood", 0.5, None), "ply34": ("3/4in plywood", 0.75, None),
+    "1x8": ("1x8 pine", 0.75, 7.25), "ply34": ("23/32 OSB (or CDX plywood)", 0.75, None),
 }
-DENS = {"ply12": 0.020, "ply34": 0.020}     # lb/in^3 (plywood ~34 pcf)
+DENS = {"ply34": 0.022}                      # lb/in^3 (OSB ~38 pcf)
 DENS_LUMBER = 0.016                          # SPF/DF KD ~28 pcf
 
 def volume(p):
@@ -304,15 +333,19 @@ for p in parts:
 
 def bbox(ps):
     bx = [p["box"] for p in ps if p["box"]]
-    lo = [min(b[2*i] for b in bx) for i in range(3)]
-    hi = [max(b[2*i+1] for b in bx) for i in range(3)]
+    lo = [min((b[2*i] for b in bx), default=math.inf) for i in range(3)]
+    hi = [max((b[2*i+1] for b in bx), default=-math.inf) for i in range(3)]
     for p in ps:
         if p["rot"]:
             c, s, a = p["rot"]["center"], p["rot"]["size"], math.radians(p["rot"]["angle"])
-            hy = abs(s[1] / 2 * math.cos(a)) + abs(s[2] / 2 * math.sin(a))
-            hz = abs(s[1] / 2 * math.sin(a)) + abs(s[2] / 2 * math.cos(a))
-            lo = [min(lo[0], c[0] - s[0] / 2), min(lo[1], c[1] - hy), min(lo[2], c[2] - hz)]
-            hi = [max(hi[0], c[0] + s[0] / 2), max(hi[1], c[1] + hy), max(hi[2], c[2] + hz)]
+            if p["rot"].get("axis", "x") == "x":
+                h = (s[0] / 2, abs(s[1] / 2 * math.cos(a)) + abs(s[2] / 2 * math.sin(a)),
+                     abs(s[1] / 2 * math.sin(a)) + abs(s[2] / 2 * math.cos(a)))
+            else:
+                h = (abs(s[0] / 2 * math.cos(a)) + abs(s[2] / 2 * math.sin(a)), s[1] / 2,
+                     abs(s[0] / 2 * math.sin(a)) + abs(s[2] / 2 * math.cos(a)))
+            lo = [min(l, ci - hi_) for l, ci, hi_ in zip(lo, c, h)]
+            hi = [max(m, ci + hi_) for m, ci, hi_ in zip(hi, c, h)]
     return [h - l for l, h in zip(lo, hi)]
 
 # --------------------------------------------------------------- structure
@@ -392,8 +425,15 @@ k_y = 4 * k_post * 0.5                       # 50% for semi-rigid M&T joints
 chk("Sway, side-to-side (150 lb push at deck)", H / k_y, 0.125, "in", f"4 posts, {h_free:.1f}in free, joints at 50% fixity")
 Mp = H / 4 * h_free / 2
 chk("Post bending from that push", Mp / S(PX, PY), FB * CF["2x4"], "psi", "")
-# 8. racking, longitudinal (x): back shear panel, 1/4-20 bolts
-chk("Sway, lengthwise: shear-panel bolts (150 lb)", H / 6, 150, "lb/bolt", "6 bolts top row, 150 lb each allowable (conservative)")
+# 8. racking, longitudinal (x): the back diagonal brace takes all of it (posts ignored)
+Nb = H / math.cos(BRACE_TH)
+chk("Back brace bolts, lengthwise push (150 lb)", Nb / 2, 150, "lb/bolt",
+    f"brace force {Nb:.0f} lb over 2 bolts per end, 150 lb each allowable (conservative)")
+Fceb = 0.822 * E * 0.58 / (BRACE_L / 1.5) ** 2
+rb = Fceb / Fc
+Cpb = (1 + rb) / 1.6 - math.sqrt(((1 + rb) / 1.6) ** 2 - rb / 0.8)
+chk("Back brace buckling (in compression)", Nb / (1.5 * 3.5), Fc * Cpb, "psi",
+    f"2x4, {BRACE_L:.0f}in between bolt groups, weak axis, Cp={Cpb:.2f}")
 # 9. tipping (empty bed, push at cap height)
 tip_y = empty_w * (WO / 2) / CAP_TOP
 tip_x = empty_w * (LO / 2) / CAP_TOP
@@ -480,8 +520,7 @@ def write_outputs():
             ply[p["stock"]] += w * L
     sheet_n = {k: math.ceil(v / (48 * 96) * 1.05) for k, v in ply.items()}
     lines += ["", "| Sheet | Sheets | Parts |", "|---|---:|---|",
-              f"| 3/4in plywood (birch/maple or sanded pine, BC or better) | {math.ceil(ply['ply34'] / (48*96) * 1.05)} | 2 deck panels |",
-              f"| 1/2in plywood (any cabinet/BC grade; actual ~15/32) | {math.ceil(ply['ply12'] / (48*96) * 1.05)} | back shear panel + 2 end panels |"]
+              f"| 23/32 OSB (or CDX plywood) | {sheet_n['ply34']} | 2 deck panels (hidden under the mattress) |"]
 
     # rail layout: the measurements that must be right
     zb = lambda z: fmt(z - RAIL_BOT)
@@ -514,8 +553,8 @@ def write_outputs():
     lines += ["", "## Threaded inserts", "", "| Size | Where | Qty |", "|---|---|---:|"]
     for s, where, n in inserts:
         lines.append(f"| {s} | {where} | {n} |")
-    lines += [f"| **3/8-16** | **total** (+6 spares) | **{tot['3/8-16'] + 6}** |",
-              f"| **1/4-20** | **total** (+4 spares) | **{tot['1/4-20'] + 4}** |"]
+    assert set(tot) == {"3/8-16"}, "one insert size only"
+    lines += [f"| **3/8-16** | **total** (+6 spares) | **{tot['3/8-16'] + 6}** |"]
     with open(os.path.join(ROOT, "docs", "CUTLIST.md"), "w") as f:
         f.write("\n".join(lines) + "\n")
     with open(os.path.join(ROOT, "docs", "cutlist.csv"), "w", newline="") as f:
@@ -528,19 +567,14 @@ def write_cost(board_n, sheet_n, ins_tot):
         rows.append(("Lumber", f"{stk} x 8 ft", n, *PRICES[stk]))
         extra = math.ceil(n * SPARE_LUMBER)
         rows.append(("Lumber", f"{stk} x 8 ft — spares (~{SPARE_LUMBER:.0%})", extra, *PRICES[stk]))
-    for k, nm in (("ply34", "3/4in plywood 4x8"), ("ply12", "1/2in plywood 4x8")):
-        rows.append(("Plywood", nm, sheet_n[k], *PRICES[k]))
+    rows.append(("Sheet goods", "23/32 OSB 4x8", sheet_n["ply34"], *PRICES["ply34"]))
     rows.append(("Inserts & bolts", "3/8-16 inserts (packs of 50)", math.ceil((ins_tot["3/8-16"] + 6) / 50), *PRICES["insert 3/8-16 (pack of 50)"]))
-    rows.append(("Inserts & bolts", "1/4-20 inserts (packs of 25)", math.ceil((ins_tot["1/4-20"] + 4) / 25), *PRICES["insert 1/4-20 (pack of 25)"]))
     for spec, n in sorted(bolts.items()):
         rows.append(("Inserts & bolts", f"bolt {spec}", n, *PRICES[spec]))
-    n38 = sum(n for s, n in bolts.items() if s.startswith("3/8"))
-    n14 = sum(n for s, n in bolts.items() if s.startswith("1/4"))
-    rows.append(("Inserts & bolts", "fender washers 3/8", n38, *PRICES["fender washer 3/8"]))
-    rows.append(("Inserts & bolts", "fender washers 1/4", n14, *PRICES["fender washer 1/4"]))
-    rows.append(("Other hardware", "leveling glides 3/8-16 (4 pack)", 1, *PRICES["leveling glide 3/8-16 (4 pack)"]))
+    rows.append(("Inserts & bolts", "fender washers 3/8", sum(bolts.values()), *PRICES["fender washer 3/8"]))
+    rows.append(("Other hardware", "felt pads (pack)", 1, *PRICES["felt pads (pack)"]))
     rows.append(("Other hardware", "anti-tip strap", 1, *PRICES["anti-tip strap"]))
-    for k in ("wood glue (quart)", "screws 1-1/4 & 2-1/2 (boxes)", "water-based poly (2 quarts)", "sandpaper assortment"):
+    for k in ("screws 1-1/4 & 2-1/2 (boxes)", "water-based poly (1 quart, visible parts only)"):
         rows.append(("Consumables", k, 1, *PRICES[k]))
 
     money = lambda x: f"${x:,.0f}"

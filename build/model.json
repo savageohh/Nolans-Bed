@@ -11,9 +11,9 @@
   "deck_top": 54.0,
   "mattress_top": 62.0,
   "cap_top": 68.5,
-  "empty_w": 314.8392186559384,
-  "tip_y": 110.88315547554035,
-  "tip_x": 187.86938777462015,
+  "empty_w": 295.9920542470347,
+  "tip_y": 104.24537676948484,
+  "tip_x": 176.62299587368673,
   "pocket": [
    75.75,
    39.25
@@ -34,7 +34,7 @@
     72.0
    ],
    "rot": null,
-   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "note": "two 2x4 face-glued; felt pad on the foot (shim if the floor is out)",
    "cut": "3 1/2\" x 72\""
   },
   {
@@ -50,7 +50,7 @@
     72.0
    ],
    "rot": null,
-   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "note": "two 2x4 face-glued; felt pad on the foot (shim if the floor is out)",
    "cut": "3 1/2\" x 72\""
   },
   {
@@ -120,17 +120,17 @@
   {
    "name": "End panel (head)",
    "module": "End frame (head)",
-   "stock": "1/2in plywood",
+   "stock": "1x8 pine",
    "box": [
-    2.0,
-    2.5,
+    1.875,
+    2.625,
     3.5,
     44.75,
     62.0,
     68.5
    ],
    "rot": null,
-   "note": "in 1/2in routed grooves, glued",
+   "note": "solid 1x8 pine in 3/4in grooves; glue at centre only, 1/16in gap at groove bottoms for movement",
    "cut": "7 1/4\" x 42\""
   },
   {
@@ -146,7 +146,7 @@
     72.0
    ],
    "rot": null,
-   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "note": "two 2x4 face-glued; felt pad on the foot (shim if the floor is out)",
    "cut": "3 1/2\" x 72\""
   },
   {
@@ -162,7 +162,7 @@
     72.0
    ],
    "rot": null,
-   "note": "two 2x4 face-glued; 3/8-16 insert in foot for leveling glide",
+   "note": "two 2x4 face-glued; felt pad on the foot (shim if the floor is out)",
    "cut": "3 1/2\" x 72\""
   },
   {
@@ -232,17 +232,17 @@
   {
    "name": "End panel (foot)",
    "module": "End frame (foot)",
-   "stock": "1/2in plywood",
+   "stock": "1x8 pine",
    "box": [
-    79.25,
-    79.75,
+    79.125,
+    79.875,
     3.5,
     44.75,
     62.0,
     68.5
    ],
    "rot": null,
-   "note": "in 1/2in routed grooves, glued",
+   "note": "solid 1x8 pine in 3/4in grooves; glue at centre only, 1/16in gap at groove bottoms for movement",
    "cut": "7 1/4\" x 42\""
   },
   {
@@ -294,41 +294,9 @@
    "cut": "5 1/2\" x 81 3/4\""
   },
   {
-   "name": "Back shear panel",
-   "module": "Back panel",
-   "stock": "1/2in plywood",
-   "box": [
-    3.0,
-    78.75,
-    43.25,
-    43.75,
-    10.0,
-    46.75
-   ],
-   "rot": null,
-   "note": "glued+screwed to top cleat; 1/4-20 bolts into stretcher",
-   "cut": "36 3/4\" x 75 5/8\""
-  },
-  {
-   "name": "Back panel top cleat",
-   "module": "Back panel",
-   "stock": "2x2",
-   "box": [
-    3.0,
-    78.75,
-    43.75,
-    45.25,
-    45.25,
-    46.75
-   ],
-   "rot": null,
-   "note": "glued to panel; 1/4-20 bolts up into rail bottom edge",
-   "cut": "1 1/2\" x 75 5/8\""
-  },
-  {
    "name": "Deck ply 1",
    "module": "Deck panel 1",
-   "stock": "3/4in plywood",
+   "stock": "23/32 OSB (or CDX plywood)",
    "box": [
     3.0625,
     40.84375,
@@ -408,7 +376,7 @@
   {
    "name": "Deck ply 2",
    "module": "Deck panel 2",
-   "stock": "3/4in plywood",
+   "stock": "23/32 OSB (or CDX plywood)",
    "box": [
     40.90625,
     78.6875,
@@ -804,6 +772,28 @@
    "rot": null,
    "note": "pine; glued+screwed over both rails; clear gap 2.72in",
    "cut": "2 1/2\" x 11 3/4\""
+  },
+  {
+   "name": "Back diagonal brace",
+   "module": "Back brace",
+   "stock": "2x4",
+   "box": null,
+   "rot": {
+    "center": [
+     35.75,
+     46.0,
+     31.0
+    ],
+    "size": [
+     71.6065341945984,
+     1.5,
+     3.5
+    ],
+    "angle": -32.40667004389689,
+    "axis": "y"
+   },
+   "note": "32 deg; 2 bolts each end into stretcher/rail outer faces",
+   "cut": "3 1/2\" x 71 5/8\""
   },
   {
    "name": "Guard stile front 1",

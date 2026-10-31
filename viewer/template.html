@@ -30,7 +30,7 @@
   <div class="sub" id="sub"></div>
   Explode <input id="ex" type="range" min="0" max="1" step="0.01" value="0">
   <div class="row">
-    <button data-v="iso">Iso</button><button data-v="front">Front</button><button data-v="end">End</button><button data-v="top">Top</button>
+    <button data-v="iso">Iso</button><button data-v="front">Front</button><button data-v="end">End</button><button data-v="top">Top</button><button data-v="back">Back</button>
     <button id="mat">Mattress</button>
   </div>
   <div id="mods"></div>
@@ -53,12 +53,12 @@ document.getElementById('sub').textContent =
 
 const COLORS = {
   'End frame (head)':'#b48ead','End frame (foot)':'#b48ead','Long rail (front)':'#d08770','Long rail (back)':'#d08770',
-  'Back stretcher':'#bf616a','Back panel':'#c9b79c','Deck panel 1':'#e5c07b','Deck panel 2':'#d9b26a',
+  'Back stretcher':'#bf616a','Back brace':'#c9b79c','Deck panel 1':'#e5c07b','Deck panel 2':'#d9b26a',
   'Guard (back)':'#81a1c1','Guard (front)':'#88c0d0','Ladder':'#a3be8c'
 };
 const EXPLODE = {
   'End frame (head)':[-30,0,0],'End frame (foot)':[30,0,0],'Long rail (front)':[0,-22,0],'Long rail (back)':[0,22,0],
-  'Back stretcher':[0,30,-6],'Back panel':[0,40,-4],'Deck panel 1':[-8,0,40],'Deck panel 2':[8,0,40],
+  'Back stretcher':[0,30,-6],'Back brace':[0,40,-4],'Deck panel 1':[-8,0,40],'Deck panel 2':[8,0,40],
   'Guard (back)':[0,32,22],'Guard (front)':[0,-32,22],'Ladder':[0,-55,0]
 };
 const canvas = document.getElementById('c');
@@ -89,7 +89,7 @@ for (const p of M.parts) {
     mesh = new THREE.Mesh(geo, mat); mesh.position.set((x0+x1)/2,(y0+y1)/2,(z0+z1)/2);
   } else {
     const r = p.rot; geo = new THREE.BoxGeometry(...r.size);
-    mesh = new THREE.Mesh(geo, mat); mesh.position.set(...r.center); mesh.rotation.x = r.angle*Math.PI/180;
+    mesh = new THREE.Mesh(geo, mat); mesh.position.set(...r.center); mesh.rotation[r.axis||'x'] = r.angle*Math.PI/180;
   }
   mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), edgeMat));
   mesh.userData.part = p; pickables.push(mesh); groups[p.module].add(mesh);
@@ -113,7 +113,7 @@ const applyEx = () => { const t = +ex.value;
   mattress.position.z = (mz0+mz1)/2 + 70*t; };
 ex.oninput = applyEx;
 
-const VIEWS = { iso:[-1.1,-1.6,0.9], front:[0,-1,0.12], end:[-1,0,0.12], top:[0,-0.001,1] };
+const VIEWS = { iso:[-1.1,-1.6,0.9], front:[0,-1,0.12], end:[-1,0,0.12], top:[0,-0.001,1], back:[1.1,1.6,0.7] };
 function view(v){ const d = new THREE.Vector3(...VIEWS[v]).normalize().multiplyScalar(250); cam.position.copy(C).add(d); ctr.update(); }
 document.querySelectorAll('[data-v]').forEach(b => b.onclick = () => view(b.dataset.v));
 view('iso');
